@@ -15,23 +15,23 @@ export default function Home() {
     <div className="w-full text-white">
       {/* Hero Section */}
       <section id="home" className="h-screen flex flex-col items-center justify-center pt-0 mt-0">
-        <h1 className="text-6xl font-extrabold">Lagani Patel</h1>
-        <div className="text-2xl mt-4 flex items-center">
-          <span>I build </span>
-          <span className="text-blue-400 font-bold ml-2">
-            <ReactTyped
-              strings={[
-                "intelligent systems.",
-                "interactive applications.",
-                "data-driven solutions.",
-              ]}
-              typeSpeed={50}
-              backSpeed={30}
-              loop
-            />
-          </span>
-        </div>
-      </section>
+  <h1 className="text-4xl md:text-6xl font-extrabold">Lagani Patel</h1>
+  <div className="text-xl md:text-2xl mt-4 flex items-center">
+    <span>I build </span>
+    <span className="text-blue-400 font-bold ml-2">
+      <ReactTyped
+        strings={[
+          "intelligent systems.",
+          "interactive applications.",
+          "data-driven solutions.",
+        ]}
+        typeSpeed={50}
+        backSpeed={30}
+        loop
+      />
+    </span>
+  </div>
+</section>
 
 
       {/* Experience Section - Timeline-Based */}
@@ -211,41 +211,42 @@ export default function Home() {
 
 
       {/* Education Section */}
-      <motion.section id="education" className="h-screen flex flex-col md:flex-row items-center justify-center bg-[#2C4678] px-10 md:px-20 pb-20"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.2 }}>
-        <div className="relative group md:mr-10">
-          <Image
-            src="/education_test.jpg"
-            alt="University 2"
-            width={400}
-            height={300}
-            className="rounded-lg shadow-lg transition duration-300 group-hover:opacity-75"
-          />
-        </div>
-        <div className="w-full md:w-1/2 text-center md:text-left md:pl-10">
-          <h1 className="text-5xl font-extrabold text-white">Education</h1>
-          <p className="text-xl mt-4 text-gray-300">
-            I’m pursuing a Master of Computer Science at North Carolina State University, where I’ve been diving deep into Data Analytics, Data Science, Machine Learning, and Software Engineering. My undergraduate studies at Pandit Deendayal Energy University in Information and Communication Technology Engineering laid a strong foundation in Data Structures, Database Management Systems, and Operating Systems.
-          </p>
-        </div>
-      </motion.section>
+      <motion.section id="education" className="h-auto md:h-screen flex flex-col md:flex-row items-center justify-center bg-[#2C4678] px-6 md:px-20 py-10 md:pb-20"
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 1.2 }}>
+  <div className="relative group md:mr-10">
+    <Image
+      src="/education_test.jpg"
+      alt="University 2"
+      width={400}
+      height={300}
+      className="rounded-lg shadow-lg transition duration-300 group-hover:opacity-75"
+    />
+  </div>
+  <div className="w-full md:w-1/2 text-center md:text-left md:pl-10 mt-6 md:mt-0">
+    <h1 className="text-4xl md:text-5xl font-extrabold text-white">Education</h1>
+    <p className="text-lg md:text-xl mt-4 text-gray-300">
+    I’m pursuing a Master of Computer Science at North Carolina State University, where I’ve been diving deep into Data Analytics, Data Science, Machine Learning, and Software Engineering. My undergraduate studies at Pandit Deendayal Energy University in Information and Communication Technology Engineering laid a strong foundation in Data Structures, Database Management Systems, and Operating Systems.
+    </p>
+  </div>
+</motion.section>
+
 
       {/* beyond code section */}
       <motion.section
-        id="beyond code"
-        className="h-screen flex flex-col md:flex-row items-center justify-center bg-[#7586A9] px-6 md:px-16 pb-20"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.2 }}
-      >
-        <div className="w-full md:w-1/2 text-center md:text-left">
-          <h1 className="text-5xl font-extrabold text-white">Beyond Code</h1>
-          <p className="text-xl mt-4 text-gray-300">
-            I’m a 23-year-old embracing both the struggles and successes on my journey through the world of data science.
+  id="beyond code"
+  className="h-auto md:h-screen flex flex-col md:flex-row items-center justify-center bg-[#7586A9] px-6 md:px-16 py-10 md:pb-20"
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 1.2 }}
+>
+  <div className="w-full md:w-1/2 text-center md:text-left">
+    <h1 className="text-4xl md:text-5xl font-extrabold text-white">Beyond Code</h1>
+    <p className="text-lg md:text-xl mt-4 text-gray-300">
+    I’m a 23-year-old embracing both the struggles and successes on my journey through the world of data science.
           </p>
           <p className="text-xl mt-4 text-gray-300">
             Tech is a big part of my life, but beyond coding, I find joy in many different things. I am a part-time event manager at our university's Student Union and have managed over 100 events, making sure everything runs smoothly.
@@ -255,22 +256,18 @@ export default function Home() {
           </p>
           <p className="text-xl mt-4 text-gray-300">
             Cooking is another passion—I love trying new recipes and finding creative ways to meet my protein goals as a vegetarian. I also enjoy reading poetry and discovering new stories. Whether it’s planning an event, capturing a moment, or experimenting in the kitchen, I love exploring creativity in different ways.
-          </p>
-        </div>
-
-        {/* Image/Video Section */}
-        <div className="w-full md:w-1/2 flex justify-center">
-          <Image
-            src="/test_image.jpg"
-            alt="Lagani Patel"
-            width={350}
-            height={350}
-            className="rounded-lg shadow-lg"
-          />
-        </div>
-
-
-      </motion.section>
+    </p>
+  </div>
+  <div className="w-full md:w-1/2 flex justify-center mt-6 md:mt-0">
+    <Image
+      src="/test_image.jpg"
+      alt="Lagani Patel"
+      width={350}
+      height={350}
+      className="rounded-lg shadow-lg"
+    />
+  </div>
+</motion.section>
 
     </div>
   );
