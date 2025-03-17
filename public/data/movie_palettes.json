@@ -1,0 +1,86 @@
+[
+  {
+    "title": "Toy Story (1995)",
+    "genre": "Animation|Adventure|Comedy",
+    "director": "John Lasseter",
+    "palette": [
+      "#373b4b",
+      "#e4b786",
+      "#2886c5",
+      "#916658",
+      "#93b980"
+    ]
+  },
+  {
+    "title": "Jumanji (1995)",
+    "genre": "Action|Adventure|Family",
+    "director": "Joe Johnston",
+    "palette": [
+      "#121110",
+      "#ceaf8d",
+      "#624d41",
+      "#7c9074",
+      "#7c8484"
+    ]
+  },
+  {
+    "title": "Waiting to Exhale (1995)",
+    "genre": "Comedy|Drama|Romance",
+    "director": "Forest Whitaker",
+    "palette": [
+      "#f0e8d0",
+      "#28251a",
+      "#a36237",
+      "#774023",
+      "#b68b62"
+    ]
+  },
+  {
+    "title": "Father of the Bride Part II (1995)",
+    "genre": "Comedy|Family|Romance",
+    "director": "Charles Shyer",
+    "palette": [
+      "#151011",
+      "#cd8663",
+      "#f7eed4",
+      "#68321d",
+      "#695f57"
+    ]
+  },
+  {
+    "title": "Heat (1995)",
+    "genre": "Action|Crime|Drama",
+    "director": "Michael Mann",
+    "palette": [
+      "#111013",
+      "#bcd0e4",
+      "#6aa3dd",
+      "#3a6ba9",
+      "#605554"
+    ]
+  },
+  {
+    "title": "Sabrina (1995)",
+    "genre": "Comedy|Drama",
+    "director": "Sydney Pollack",
+    "palette": [
+      "#171415",
+      "#e8d2ce",
+      "#c01e2e",
+      "#808284",
+      "#848c8c"
+    ]
+  },
+  {
+    "title": "Sudden Death (1995)",
+    "genre": "Action|Crime|Thriller",
+    "director": "Peter Hyams",
+    "palette": [
+      "#1e1a17",
+      "#dbb5a5",
+      "#cb3329",
+      "#7d8c8f",
+      "#517488"
+    ]
+  }
+]

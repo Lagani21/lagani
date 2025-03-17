@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ReactTyped } from "react-typed";
 import { motion } from "framer-motion";
 
+
 export default function Home() {
   const [mounted, setMounted] = useState(false);
 
@@ -243,14 +244,15 @@ export default function Home() {
       >
         <div className="w-full md:w-1/2 text-center md:text-left">
           <h1 className="text-5xl font-extrabold text-black">Beyond Code</h1>
-          <p className="text-xl mt-4 text-black">
-            <p>I’m a 23-year-old embracing both the struggles and successes on my journey through the world of data science.</p>
-
-            <p>Tech is a big part of my life, but beyond coding, I find joy in many different things. I work as a part-time event manager at my university’s Student Union, where I’ve managed over 100 events, handling everything from logistics and coordinating AV Tech to problem-solving on the fly.
+          <div className="text-xl mt-4 text-black">
+            <p className="text-lg text-gray-600">I’m a 22-year-old embracing both the struggles and successes on my journey through the world of data science.</p>
+            <p className="text-xl mt-4 text-gray-700 leading-relaxed">Tech is a big part of my life, but beyond coding, I find joy in many different things.
+              I work as a part-time event manager at my university’s Student Union, where I’ve managed over 100 events,
+              handling everything from logistics and coordinating AV Tech to problem-solving on the fly.
             </p>
-            I have a passion for photography and filmmaking, I am loving the work of director Mike Flanagan currently.
-            I like cooking and reading poems. Lately, I’ve been on a quest to incorporate more protein into my diet as a vegetarian. 
-            </p>
+            <p className="text-xl mt-4 text-gray-700 leading-relaxed">I have a passion for photography and filmmaking, I am loving the work of director Mike Flanagan currently.
+              I like cooking and reading poems. Lately, I’ve been on a quest to incorporate more protein into my diet as a vegetarian. </p>
+          </div>
         </div>
 
         {/* Image/Video Section */}
