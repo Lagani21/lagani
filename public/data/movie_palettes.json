@@ -2,85 +2,426 @@
   {
     "title": "Toy Story (1995)",
     "genre": "Animation|Adventure|Comedy",
-    "director": "John Lasseter",
+    "director": "Unknown",
+    "imdbId": "114709",
     "palette": [
       "#373b4b",
       "#e4b786",
       "#2886c5",
       "#916658",
       "#93b980"
-    ]
+    ],
+    "avg_lightness": 50.02,
+    "avg_saturation": 39.7,
+    "avg_hue": 115.62,
+    "tone": "neutral"
   },
   {
     "title": "Jumanji (1995)",
     "genre": "Action|Adventure|Family",
-    "director": "Joe Johnston",
+    "director": "Unknown",
+    "imdbId": "113497",
     "palette": [
       "#121110",
       "#ceaf8d",
       "#624d41",
       "#7c9074",
       "#7c8484"
-    ]
+    ],
+    "avg_lightness": 41.58,
+    "avg_saturation": 16.06,
+    "avg_hue": 73.22,
+    "tone": "neutral"
   },
   {
     "title": "Waiting to Exhale (1995)",
     "genre": "Comedy|Drama|Romance",
-    "director": "Forest Whitaker",
+    "director": "Unknown",
+    "imdbId": "114885",
     "palette": [
       "#f0e8d0",
       "#28251a",
       "#a36237",
       "#774023",
       "#b68b62"
-    ]
+    ],
+    "avg_lightness": 45.7,
+    "avg_saturation": 42.66,
+    "avg_hue": 33.2,
+    "tone": "warm"
   },
   {
     "title": "Father of the Bride Part II (1995)",
     "genre": "Comedy|Family|Romance",
-    "director": "Charles Shyer",
+    "director": "Unknown",
+    "imdbId": "113041",
     "palette": [
       "#151011",
       "#cd8663",
       "#f7eed4",
       "#68321d",
       "#695f57"
-    ]
+    ],
+    "avg_lightness": 44.12,
+    "avg_saturation": 39.88,
+    "avg_hue": 91.18,
+    "tone": "neutral"
   },
   {
     "title": "Heat (1995)",
     "genre": "Action|Crime|Drama",
-    "director": "Michael Mann",
+    "director": "Unknown",
+    "imdbId": "113277",
     "palette": [
       "#111013",
       "#bcd0e4",
       "#6aa3dd",
       "#3a6ba9",
       "#605554"
-    ]
+    ],
+    "avg_lightness": 46.48,
+    "avg_saturation": 33.92,
+    "avg_hue": 179.76,
+    "tone": "neutral"
   },
   {
     "title": "Sabrina (1995)",
     "genre": "Comedy|Drama",
-    "director": "Sydney Pollack",
+    "director": "Unknown",
+    "imdbId": "114319",
     "palette": [
       "#171415",
       "#e8d2ce",
       "#c01e2e",
       "#808284",
       "#848c8c"
-    ]
+    ],
+    "avg_lightness": 48.42,
+    "avg_saturation": 24.22,
+    "avg_hue": 218.66,
+    "tone": "cool"
   },
   {
     "title": "Sudden Death (1995)",
     "genre": "Action|Crime|Thriller",
-    "director": "Peter Hyams",
+    "director": "Unknown",
+    "imdbId": "114576",
     "palette": [
       "#1e1a17",
       "#dbb5a5",
       "#cb3329",
       "#7d8c8f",
       "#517488"
-    ]
+    ],
+    "avg_lightness": 45.7,
+    "avg_saturation": 31.04,
+    "avg_hue": 87.8,
+    "tone": "neutral"
+  },
+  {
+    "title": "The American President (1995)",
+    "genre": "Comedy|Drama|Romance",
+    "director": "Unknown",
+    "imdbId": "112346",
+    "palette": [
+      "#b89794",
+      "#0c0709",
+      "#593f47",
+      "#77648c",
+      "#7c8484"
+    ],
+    "avg_lightness": 39.18,
+    "avg_saturation": 16.68,
+    "avg_hue": 226.2,
+    "tone": "cool"
+  },
+  {
+    "title": "Dracula: Dead and Loving It (1995)",
+    "genre": "Comedy|Fantasy|Horror",
+    "director": "Unknown",
+    "imdbId": "112896",
+    "palette": [
+      "#e7b086",
+      "#1e1310",
+      "#874c3d",
+      "#9d968b",
+      "#807984"
+    ],
+    "avg_lightness": 45.32,
+    "avg_saturation": 29.56,
+    "avg_hue": 73.2,
+    "tone": "neutral"
+  },
+  {
+    "title": "Balto (1995)",
+    "genre": "Animation|Adventure|Drama",
+    "director": "Unknown",
+    "imdbId": "112453",
+    "palette": [
+      "#4f598b",
+      "#e3d6c8",
+      "#281f1f",
+      "#a4b5df",
+      "#7390d6"
+    ],
+    "avg_lightness": 56.14,
+    "avg_saturation": 35.08,
+    "avg_hue": 141.24,
+    "tone": "neutral"
+  },
+  {
+    "title": "Nixon (1995)",
+    "genre": "Biography|Drama|History",
+    "director": "Unknown",
+    "imdbId": "113987",
+    "palette": [
+      "#1e1916",
+      "#a66335",
+      "#68381a",
+      "#747474",
+      "#7c7c7c"
+    ],
+    "avg_lightness": 34.54,
+    "avg_saturation": 25.4,
+    "avg_hue": 14.0,
+    "tone": "warm"
+  },
+  {
+    "title": "Cutthroat Island (1995)",
+    "genre": "Action|Adventure|Comedy",
+    "director": "Unknown",
+    "imdbId": "112760",
+    "palette": [
+      "#a36948",
+      "#e1c9a3",
+      "#36261f",
+      "#cfb09e",
+      "#622612"
+    ],
+    "avg_lightness": 46.64,
+    "avg_saturation": 43.88,
+    "avg_hue": 22.78,
+    "tone": "warm"
+  },
+  {
+    "title": "Casino (1995)",
+    "genre": "Crime|Drama",
+    "director": "Unknown",
+    "imdbId": "112641",
+    "palette": [
+      "#af876e",
+      "#0c0a0d",
+      "#664c43",
+      "#838481",
+      "#807c84"
+    ],
+    "avg_lightness": 38.98,
+    "avg_saturation": 13.38,
+    "avg_hue": 133.7,
+    "tone": "neutral"
+  },
+  {
+    "title": "Sense and Sensibility (1995)",
+    "genre": "Drama|Romance",
+    "director": "Unknown",
+    "imdbId": "114388",
+    "palette": [
+      "#e3ce8d",
+      "#743d24",
+      "#ac892f",
+      "#ae7846",
+      "#786e30"
+    ],
+    "avg_lightness": 45.12,
+    "avg_saturation": 51.16,
+    "avg_hue": 37.56,
+    "tone": "warm"
+  },
+  {
+    "title": "Four Rooms (1995)",
+    "genre": "Comedy",
+    "director": "Unknown",
+    "imdbId": "113101",
+    "palette": [
+      "#e5d5c8",
+      "#342324",
+      "#9b5044",
+      "#b37a59",
+      "#5c5c59"
+    ],
+    "avg_lightness": 46.58,
+    "avg_saturation": 26.64,
+    "avg_hue": 94.74,
+    "tone": "neutral"
+  },
+  {
+    "title": "Ace Ventura: When Nature Calls (1995)",
+    "genre": "Adventure|Comedy|Crime",
+    "director": "Unknown",
+    "imdbId": "112281",
+    "palette": [
+      "#212628",
+      "#dddacf",
+      "#9d2f20",
+      "#bba12f",
+      "#6f7881"
+    ],
+    "avg_lightness": 45.66,
+    "avg_saturation": 32.02,
+    "avg_hue": 102.06,
+    "tone": "neutral"
+  },
+  {
+    "title": "Money Train (1995)",
+    "genre": "Action|Comedy|Crime",
+    "director": "Unknown",
+    "imdbId": "113845",
+    "palette": [
+      "#290e0e",
+      "#822720",
+      "#f1ddbd",
+      "#eb411d",
+      "#cc9598"
+    ],
+    "avg_lightness": 49.58,
+    "avg_saturation": 58.66,
+    "avg_hue": 81.68,
+    "tone": "neutral"
+  },
+  {
+    "title": "Get Shorty (1995)",
+    "genre": "Comedy|Crime|Thriller",
+    "director": "Unknown",
+    "imdbId": "113161",
+    "palette": [
+      "#ddc0b4",
+      "#0c0b0c",
+      "#654d48",
+      "#1e449e",
+      "#84867c"
+    ],
+    "avg_lightness": 40.9,
+    "avg_saturation": 26.16,
+    "avg_hue": 124.42,
+    "tone": "neutral"
+  },
+  {
+    "title": "Copycat (1995)",
+    "genre": "Crime|Drama|Mystery",
+    "director": "Unknown",
+    "imdbId": "112722",
+    "palette": [
+      "#0d151a",
+      "#b3adb6",
+      "#7096ae",
+      "#507a95",
+      "#635255"
+    ],
+    "avg_lightness": 42.74,
+    "avg_saturation": 21.26,
+    "avg_hue": 247.84,
+    "tone": "cool"
+  },
+  {
+    "title": "Assassins (1995)",
+    "genre": "Action|Crime|Thriller",
+    "director": "Unknown",
+    "imdbId": "112401",
+    "palette": [
+      "#c8858b",
+      "#110b0f",
+      "#6d4951",
+      "#817289",
+      "#89858d"
+    ],
+    "avg_lightness": 41.88,
+    "avg_saturation": 18.34,
+    "avg_hue": 314.08,
+    "tone": "warm"
+  },
+  {
+    "title": "Powder (1995)",
+    "genre": "Drama|Fantasy|Mystery",
+    "director": "Unknown",
+    "imdbId": "114168",
+    "palette": [
+      "#dfbbad",
+      "#212b4e",
+      "#8c736b",
+      "#6d5254",
+      "#6c5c44"
+    ],
+    "avg_lightness": 43.96,
+    "avg_saturation": 26.92,
+    "avg_hue": 129.92,
+    "tone": "neutral"
+  },
+  {
+    "title": "Leaving Las Vegas (1995)",
+    "genre": "Drama|Romance",
+    "director": "Unknown",
+    "imdbId": "113627",
+    "palette": [
+      "#c5b3ad",
+      "#0c0b0a",
+      "#634c47",
+      "#799eb0",
+      "#5e738a"
+    ],
+    "avg_lightness": 42.76,
+    "avg_saturation": 17.5,
+    "avg_hue": 93.34,
+    "tone": "neutral"
+  },
+  {
+    "title": "Now and Then (1995)",
+    "genre": "Comedy|Drama|Romance",
+    "director": "Unknown",
+    "imdbId": "114011",
+    "palette": [
+      "#e5e2d8",
+      "#1d1d25",
+      "#8a5248",
+      "#a08465",
+      "#697ca0"
+    ],
+    "avg_lightness": 48.92,
+    "avg_saturation": 21.92,
+    "avg_hue": 109.22,
+    "tone": "neutral"
+  },
+  {
+    "title": "Persuasion",
+    "genre": "Drama",
+    "director": "Unknown",
+    "imdbId": "114117",
+    "palette": [
+      "#d8c7b7",
+      "#181615",
+      "#7faf71",
+      "#806259",
+      "#888592"
+    ],
+    "avg_lightness": 48.14,
+    "avg_saturation": 17.58,
+    "avg_hue": 84.64,
+    "tone": "neutral"
+  },
+  {
+    "title": "The City of Lost Children (1995)",
+    "genre": "Fantasy|Sci-Fi",
+    "director": "Unknown",
+    "imdbId": "112682",
+    "palette": [
+      "#161928",
+      "#cec6ba",
+      "#3f5678",
+      "#5e7aa8",
+      "#8199bc"
+    ],
+    "avg_lightness": 47.72,
+    "avg_saturation": 27.48,
+    "avg_hue": 182.94,
+    "tone": "cool"
   }
 ]

@@ -1,6 +1,13 @@
 import "../styles/globals.css"; // ✅ Ensure global styles are applied
 import Navbar from "../components/Navbar"; // ✅ Import Navbar
 
+// src/app/layout.jsx
+export const metadata = {
+  title: "Lagani Patel",
+  description: "Portfolio of Lagani Patel",
+  viewport: "width=device-width, initial-scale=1",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

@@ -4,7 +4,6 @@ import Image from "next/image";
 import { ReactTyped } from "react-typed";
 import { motion } from "framer-motion";
 
-
 export default function Home() {
   const [mounted, setMounted] = useState(false);
 
@@ -15,9 +14,10 @@ export default function Home() {
   return (
     <div className="w-full text-white">
       {/* Hero Section */}
-      <section id="home" className="h-screen flex flex-col items-center justify-center pt-0 mt-0">
-        <h1 className="text-6xl font-extrabold">Lagani Patel</h1>
-        <div className="text-2xl mt-4 flex items-center">
+      <section id="home" className="h-screen flex flex-col items-center justify-center px-4 text-center">
+
+        <h1 className="text-4xl md:text-6xl font-extrabold">Lagani Patel</h1>
+        <div className="text-xl md:text-2xl mt-4 flex items-center">
           <span>I build </span>
           <span className="text-blue-400 font-bold ml-2">
             <ReactTyped
@@ -34,8 +34,7 @@ export default function Home() {
         </div>
       </section>
 
-
-      {/* Experience Section - Timeline-Based */}
+{/* Experience Section - Timeline-Based */}
       {mounted && (
         <motion.section
           id="experience"
@@ -75,7 +74,7 @@ export default function Home() {
                 transition={{ duration: 1.5, ease: "easeInOut" }}
               >
                 {/* Experience Card */}
-                <div className="experience-card group left-[50%] top-[50%] transform -translate-x-[18%] -translate-y-[0%] bg-white text-black rounded-lg shadow-lg p-5 w-[350px] h-[140px] flex flex-col justify-center transition-all duration-500 ease-in-out hover:h-[500px]">
+                <div className="experience-card group left-[50%] top-[50%] transform -translate-x-[18%] -translate-y-[0%] bg-white text-black rounded-lg shadow-lg p-5 w-full max-w-[350px] h-[140px] flex flex-col justify-center transition-all duration-500 ease-in-out hover:h-[500px]">
                   <h2 className="text-xl font-bold">Data Scientist - NC Museum of Natural Sciences</h2>
                   <p className="text-gray-600 text-sm">Oct 2024 - Present</p>
                   <div className="details opacity-0 max-h-0 overflow-y-auto transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:max-h-[400px] mt-4">
@@ -97,7 +96,7 @@ export default function Home() {
                 transition={{ duration: 1.5, ease: "easeInOut" }}
               >
                 {/* Experience Card */}
-                <div className="experience-card group left-[50%] top-[50%] transform -translate-x-[-18%] -translate-y-[10%] bg-white text-black rounded-lg shadow-lg p-5 w-[350px] h-[140px] flex flex-col justify-center transition-all duration-500 ease-in-out hover:h-[500px]">
+                <div className="experience-card group left-[50%] top-[50%] transform -translate-x-[-18%] -translate-y-[10%] bg-white text-black rounded-lg shadow-lg p-5 w-full max-w-[350px] h-[140px] flex flex-col justify-center transition-all duration-500 ease-in-out hover:h-[500px]">
                   <h2 className="text-xl font-bold">Machine Learning Engineer - Dept. of MAE, NC State University</h2>
                   <p className="text-gray-600 text-sm">Feb 2024 - August 2024</p>
                   <div className="details opacity-0 max-h-0 overflow-y-auto transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:max-h-[400px] mt-4">
@@ -134,7 +133,7 @@ export default function Home() {
                 transition={{ duration: 1.5, ease: "easeInOut" }}
               >
                 {/* Experience Card */}
-                <div className="experience-card group left-[50%] top-[50%] transform -translate-x-[18%] -translate-y-[30%] bg-white text-black rounded-lg shadow-lg p-5 w-[350px] h-[140px] flex flex-col justify-center transition-all duration-500 ease-in-out hover:h-[260px]">
+                <div className="experience-card group left-[50%] top-[50%] transform -translate-x-[18%] -translate-y-[30%] bg-white text-black rounded-lg shadow-lg p-5 w-full max-w-[350px] h-[140px] flex flex-col justify-center transition-all duration-500 ease-in-out hover:h-[260px]">
                   <h2 className="text-xl font-bold">Software Engineering Intern - CaringHumans</h2>
                   <p className="text-gray-600 text-sm">Jan 2023 - May 2023</p>
                   <div className="details opacity-0 max-h-0 overflow-y-auto transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:max-h-[200px] mt-4">
@@ -226,7 +225,7 @@ export default function Home() {
           />
         </div>
         <div className="w-full md:w-1/2 text-center md:text-left md:pl-10">
-          <h1 className="text-5xl font-extrabold text-black">Education</h1>
+          <h1 className="text-4xl md:text-6xl font-extrabold">Education</h1>
           <p className="text-xl mt-4 text-black">
             I’m pursuing a Master of Computer Science at North Carolina State University, where I’ve been diving deep into Data Analytics, Data Science, Machine Learning, and Software Engineering. My undergraduate studies at Pandit Deendayal Energy University in Information and Communication Technology Engineering laid a strong foundation in Data Structures, Database Management Systems, and Internet of Things.
           </p>
@@ -269,6 +268,6 @@ export default function Home() {
 
       </motion.section>
 
-    </div>
+    </div >
   );
 }
