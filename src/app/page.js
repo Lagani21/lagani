@@ -67,7 +67,7 @@ export default function Home() {
 
               {/* 2. Dynamic Card for Data Scientist on Right */}
               <motion.div
-                className="flex w-full items-center justify-end relative"
+                className="flex w-full items-center justify-center md:justify-end relative"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -126,7 +126,7 @@ export default function Home() {
 
               {/* 5. Dynamic Card for Software Engineer Intern on Right */}
               <motion.div
-                className="flex w-full items-center justify-end relative"
+                className="flex w-full items-center justify-center md:justify-end relative"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
