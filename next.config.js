@@ -1,8 +1,7 @@
 // next.config.js
 const nextConfig = {
-  experimental: {
-    appDir: true, // Enable the App Router
-  },
+  // Remove deprecated experimental.appDir option
+  // Add proper configuration for Next.js 15
 };
 
 module.exports = nextConfig;

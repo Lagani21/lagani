@@ -5,7 +5,11 @@ import Navbar from "../components/Navbar"; // ✅ Import Navbar
 export const metadata = {
   title: "Lagani Patel",
   description: "Portfolio of Lagani Patel",
-  viewport: "width=device-width, initial-scale=1",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }) {

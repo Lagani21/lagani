@@ -4,7 +4,7 @@ export default function ColorStripe({ palette }) {
         {palette.map((color, idx) => (
           <div
             key={idx}
-            className="flex-1 transition-all duration-300 hover:scale-105"
+            className="flex-1 transition-all duration-300"
             style={{ backgroundColor: color }}
             title={color}
           />

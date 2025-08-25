@@ -1,10 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
-import { FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaLinkedin, FaEnvelope, FaGithubSquare, FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
   const [hasMounted, setHasMounted] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Prevent hydration mismatch
   useEffect(() => {
@@ -22,7 +23,10 @@ export default function Navbar() {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          if (rect.top <= window.innerHeight * 0.4 && rect.bottom >= window.innerHeight * 0.4) {
+          if (
+            rect.top <= window.innerHeight * 0.4 &&
+            rect.bottom >= window.innerHeight * 0.4
+          ) {
             currentSection = section;
           }
         }
@@ -35,11 +39,9 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [hasMounted]);
 
-  if (!hasMounted) {
-    return null; // Prevents rendering until the component mounts
-  }
+  if (!hasMounted) return null;
 
-  // Function to get navbar background color based on section
+  // Background color based on active section
   const getNavbarColor = () => {
     switch (activeSection) {
       case "experience":
@@ -55,7 +57,7 @@ export default function Navbar() {
     }
   };
 
-  // Function to get navbar text color based on section
+  // Text color based on active section
   const getNavbarTextColor = () => {
     switch (activeSection) {
       case "education":
@@ -66,56 +68,114 @@ export default function Navbar() {
     }
   };
 
+  const handleNavClick = (section) => {
+    const target = document.getElementById(section);
+    if (target) {
+      window.scrollTo({
+        top: target.offsetTop - 80, // Increased offset for better mobile experience
+        behavior: "smooth",
+      });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <nav
-      className={`fixed top-0 left-0 w-full h-16 flex-none p-4 flex items-center justify-between border-none shadow-none z-50 transition-all duration-500 ${getNavbarColor()} ${getNavbarTextColor()}`}
+      className={`fixed top-0 left-0 w-full h-16 sm:h-20 p-3 sm:p-4 flex items-center justify-between z-50 transition-all duration-500 ${getNavbarColor()} ${getNavbarTextColor()} shadow-lg`}
       style={{ margin: 0, borderBottom: "none" }}
     >
-      {/* Empty Spacer on Left Side */}
-      <div className="flex-1"></div>
+      {/* Left spacer */}
+      <div className="flex-1" />
 
-      {/* Navbar Links (Centered) */}
-      <div className="flex space-x-6">
-        {["home", "experience", "education", "beyond code"].map((section) => (
+      {/* Center links - Desktop */}
+      <div className="hidden sm:flex space-x-4 md:space-x-6 lg:space-x-8">
+        {[
+          "home",
+          "experience",
+          "education",
+          "beyond code",
+        ].map((section) => (
           <button
             key={section}
-            onClick={() => {
-              const target = document.getElementById(section);
-              if (target) {
-                window.scrollTo({
-                  top: target.offsetTop - 60,
-                  behavior: "smooth",
-                });
-              }
-            }}
-            className={`px-4 transition-all duration-300 ${
-              activeSection === section ? "font-bold scale-105" : ""
+            onClick={() => handleNavClick(section)}
+            className={`px-3 md:px-4 lg:px-5 py-2 text-sm md:text-base lg:text-lg transition-all duration-300 rounded-lg hover:bg-white/10 ${
+              activeSection === section ? "font-bold scale-105 bg-white/20" : "hover:scale-105"
             }`}
           >
-            {section.replace("-", " ").charAt(0).toUpperCase() + section.replace("-", " ").slice(1)}
+            {section
+              .replace(/-/g, " ")
+              .replace(/^\w/, (c) => c.toUpperCase())}
           </button>
         ))}
       </div>
 
-      {/* Contact Section (Right Side) */}
-      <div className="flex space-x-4 flex-1 justify-end pr-4">
+      {/* Mobile menu button */}
+      <div className="sm:hidden">
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className={`p-2 rounded-lg hover:bg-white/10 transition-all duration-300 ${getNavbarTextColor()}`}
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+        >
+          {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+        </button>
+      </div>
+
+      {/* Right icons */}
+      <div className="flex space-x-3 md:space-x-4 lg:space-x-5 flex-1 justify-end pr-2 md:pr-4">
+        <a
+          href="https://github.com/Lagani21"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`p-2 rounded-lg hover:bg-white/10 transition-all duration-300 ${getNavbarTextColor()}`}
+          aria-label="GitHub"
+        >
+          <FaGithubSquare size={20} className="md:w-6 md:h-6" />
+        </a>
         <a
           href="https://www.linkedin.com/in/laganipatel/"
           target="_blank"
           rel="noopener noreferrer"
-          className={`hover:opacity-80 transition-all duration-300 ${getNavbarTextColor()}`}
+          className={`p-2 rounded-lg hover:bg-white/10 transition-all duration-300 ${getNavbarTextColor()}`}
           aria-label="LinkedIn"
         >
-          <FaLinkedin size={24} />
+          <FaLinkedin size={20} className="md:w-6 md:h-6" />
         </a>
         <a
           href="mailto:laganipatel@gmail.com"
-          className={`hover:opacity-80 transition-all duration-300 ${getNavbarTextColor()}`}
+          className={`p-2 rounded-lg hover:bg-white/10 transition-all duration-300 ${getNavbarTextColor()}`}
           aria-label="Email"
         >
-          <FaEnvelope size={24} />
+          <FaEnvelope size={20} className="md:w-6 md:h-6" />
         </a>
       </div>
+
+      {/* Mobile menu overlay */}
+      {isMobileMenuOpen && (
+        <div className="absolute top-16 sm:top-20 left-0 w-full bg-[#001F3F]/95 backdrop-blur-sm shadow-2xl sm:hidden border-t border-white/20">
+          <div className="flex flex-col space-y-2 p-4">
+            {[
+              "home",
+              "experience",
+              "education",
+              "beyond code",
+            ].map((section) => (
+              <button
+                key={section}
+                onClick={() => handleNavClick(section)}
+                className={`text-left px-4 py-3 text-white transition-all duration-300 rounded-lg ${
+                  activeSection === section 
+                    ? "font-bold bg-white/20 text-blue-300" 
+                    : "hover:bg-white/10 hover:text-blue-200"
+                }`}
+              >
+                {section
+                  .replace(/-/g, " ")
+                  .replace(/^\w/, (c) => c.toUpperCase())}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
