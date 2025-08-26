@@ -7,9 +7,31 @@ export default function Navbar() {
   const [hasMounted, setHasMounted] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Prevent hydration mismatch
+  // Prevent hydration mismatch and detect initial section
   useEffect(() => {
     setHasMounted(true);
+    
+    // Detect initial section based on scroll position or URL hash
+    const detectInitialSection = () => {
+      const sections = ["home", "experience", "education", "beyond code"];
+      let currentSection = "home";
+
+      sections.forEach((section) => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          // Check if section is visible in viewport
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            currentSection = section;
+          }
+        }
+      });
+
+      setActiveSection(currentSection);
+    };
+
+    // Small delay to ensure DOM is ready
+    setTimeout(detectInitialSection, 100);
   }, []);
 
   useEffect(() => {
@@ -24,8 +46,8 @@ export default function Navbar() {
         if (element) {
           const rect = element.getBoundingClientRect();
           if (
-            rect.top <= window.innerHeight * 0.4 &&
-            rect.bottom >= window.innerHeight * 0.4
+            rect.top <= window.innerHeight * 0.3 &&
+            rect.bottom >= window.innerHeight * 0.3
           ) {
             currentSection = section;
           }
@@ -33,7 +55,12 @@ export default function Navbar() {
       });
 
       setActiveSection(currentSection);
+      // Debug: log the current section for troubleshooting
+      console.log('Current section:', currentSection);
     };
+
+    // Call handleScroll immediately to detect initial section
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -99,7 +126,7 @@ export default function Navbar() {
             key={section}
             onClick={() => handleNavClick(section)}
             className={`px-3 md:px-4 lg:px-5 py-2 text-sm md:text-base lg:text-lg transition-all duration-300 rounded-lg hover:bg-white/10 ${
-              activeSection === section ? "font-bold scale-105 bg-white/20" : "hover:scale-105"
+              activeSection === section ? "font-bold scale-105" : "hover:scale-105"
             }`}
           >
             {section
@@ -164,7 +191,7 @@ export default function Navbar() {
                 onClick={() => handleNavClick(section)}
                 className={`text-left px-4 py-3 text-white transition-all duration-300 rounded-lg ${
                   activeSection === section 
-                    ? "font-bold bg-white/20 text-blue-300" 
+                    ? "font-bold text-blue-300" 
                     : "hover:bg-white/10 hover:text-blue-200"
                 }`}
               >

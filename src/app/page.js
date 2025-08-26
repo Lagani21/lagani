@@ -44,16 +44,15 @@ export default function Home() {
       </section>
 
       {/* Experience Section - Timeline-Based */}
-      {mounted && (
-        <motion.section
-          id="experience"
-          className="min-h-screen flex flex-col items-center justify-center text-black bg-[#173162] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-12 sm:py-16 lg:py-20"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-        >
+      <motion.section
+        id="experience"
+        className="min-h-screen flex flex-col items-center justify-start text-black bg-[#173162] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 pt-20 sm:pt-24 lg:pt-28 overflow-visible"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
+      >
           <motion.h1 
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white text-center mb-12 sm:mb-16 lg:mb-20"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white text-center mb-8 sm:mb-10 lg:mb-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -72,14 +71,14 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
             >
-              <div className="experience-card group bg-white text-black rounded-xl shadow-xl p-6 w-full h-auto min-h-[180px] flex flex-col justify-center transition-all duration-500 ease-in-out hover:h-auto border border-gray-200">
+              <div className="experience-card group bg-white text-black rounded-xl shadow-xl p-6 w-full h-auto min-h-[180px] flex flex-col justify-center hover:h-auto border border-gray-200 transform-gpu">
                 <div className="flex items-center justify-between mb-4">
                   <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Data Scientist</h2>
                   <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">2025</span>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-700 mb-3">NC Museum of Natural Sciences</h3>
                 <p className="text-gray-600 text-sm mb-4">Oct 2024 - Present</p>
-                <div className="details opacity-0 max-h-0 overflow-y-auto transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:max-h-[400px]">
+                <div className="details">
                   <p className="text-gray-500 text-sm leading-relaxed">
                     Developing AI-driven solutions to improve wildlife monitoring across the United States. By integrating AI into our workflow, we're reducing the need for manual processing and improving classification across large datasets. One of the key aspects of our work involves depth estimation models for calibrated data, processing over 100,000+ camera trap images from diverse ecosystems.
 
@@ -97,14 +96,14 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
             >
-              <div className="experience-card group bg-white text-black rounded-xl shadow-xl p-6 w-full h-auto min-h-[180px] flex flex-col justify-center transition-all duration-500 ease-in-out hover:h-auto border border-gray-200">
+              <div className="experience-card group bg-white text-black rounded-xl shadow-xl p-6 w-full h-auto min-h-[180px] flex flex-col justify-center hover:h-auto border border-gray-200 transform-gpu">
                 <div className="flex items-center justify-between mb-4">
                   <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Machine Learning Engineer</h2>
                   <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">2024</span>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-700 mb-3">Dept. of MAE, NC State University</h3>
                 <p className="text-gray-600 text-sm mb-4">Feb 2024 - August 2024</p>
-                <div className="details opacity-0 max-h-0 overflow-y-auto transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:max-h-[400px]">
+                <div className="details">
                   <p className="text-gray-500 text-sm leading-relaxed">
                     Developed machine learning models to predict thermal conductivity profiles with improved accuracy. Using MATLAB's API Engine with Python, I generated over 30,000 data points, reducing manual processing time by 50% and enhancing model efficiency.
 
@@ -124,14 +123,14 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
             >
-              <div className="experience-card group bg-white text-black rounded-xl shadow-xl p-6 w-full h-auto min-h-[180px] flex flex-col justify-center transition-all duration-500 ease-in-out hover:h-auto border border-gray-200">
+              <div className="experience-card group bg-white text-black rounded-xl shadow-xl p-6 w-full h-auto min-h-[180px] flex flex-col justify-center hover:h-auto border border-gray-200 transform-gpu">
                 <div className="flex items-center justify-between mb-4">
                   <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Software Engineering Intern</h2>
                   <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">2023</span>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-700 mb-3">CaringHumans</h3>
                 <p className="text-gray-600 text-sm mb-4">Jan 2023 - May 2023</p>
-                <div className="details opacity-0 max-h-0 overflow-y-auto transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:max-h-[400px]">
+                <div className="details">
                   <p className="text-gray-500 text-sm leading-relaxed">
                     Worked on improving the platform frontend and integrating API-driven features. Implemented responsive design using HTML5, CSS3, and JavaScript frameworks and contributed to RESTful API development for real-time profile booking management.
                   </p>
@@ -151,7 +150,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: "easeInOut" }}
               >
-                <div className="experience-card group bg-white text-black rounded-xl shadow-xl p-6 h-[220px] lg:h-[240px] flex flex-col justify-center transition-all duration-700 ease-in-out hover:shadow-2xl hover:h-[450px] relative overflow-hidden border border-gray-200">
+                <div className="experience-card group bg-white text-black rounded-xl shadow-xl p-6 h-[220px] lg:h-[240px] flex flex-col justify-center hover:shadow-2xl relative overflow-hidden border border-gray-200 transform-gpu">
                   <div className="flex items-center justify-between mb-4">
                     <h2 className="text-xl lg:text-2xl font-bold text-gray-800">Data Scientist</h2>
                     <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">2025</span>
@@ -160,7 +159,7 @@ export default function Home() {
                   <p className="text-gray-600 text-sm mb-4">Oct 2024 - Present</p>
                   
                   {/* Expandable Content */}
-                  <div className="details opacity-0 max-h-0 overflow-y-auto transition-all duration-700 ease-in-out group-hover:opacity-100 group-hover:max-h-[300px] group-hover:mt-4">
+                  <div className="details group-hover:mt-4">
                     <p className="text-gray-500 text-sm leading-relaxed">
                       Developing AI-driven solutions to improve wildlife monitoring across the United States. By integrating AI into our workflow, we're reducing the need for manual processing and improving classification across large datasets. One of the key aspects of our work involves depth estimation models for calibrated data, processing over 100,000+ camera trap images from diverse ecosystems.
 
@@ -178,7 +177,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: "easeInOut" }}
               >
-                <div className="experience-card group bg-white text-black rounded-xl shadow-xl p-6 h-[220px] lg:h-[240px] flex flex-col justify-center transition-all duration-700 ease-in-out hover:shadow-2xl hover:h-[450px] relative overflow-hidden border border-gray-200">
+                <div className="experience-card group bg-white text-black rounded-xl shadow-xl p-6 h-[220px] lg:h-[240px] flex flex-col justify-center hover:shadow-2xl relative overflow-hidden border border-gray-200 transform-gpu">
                   <div className="flex items-center justify-between mb-4">
                     <h2 className="text-xl lg:text-2xl font-bold text-gray-800">Machine Learning Engineer</h2>
                     <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">2024</span>
@@ -187,7 +186,7 @@ export default function Home() {
                   <p className="text-gray-600 text-sm mb-4">Feb 2024 - August 2024</p>
                   
                   {/* Expandable Content */}
-                  <div className="details opacity-0 max-h-0 overflow-y-auto transition-all duration-700 ease-in-out group-hover:opacity-100 group-hover:max-h-[300px] group-hover:mt-4">
+                  <div className="details group-hover:mt-4">
                     <p className="text-gray-500 text-sm leading-relaxed">
                       Developed machine learning models to predict thermal conductivity profiles with improved accuracy. Using MATLAB's API Engine with Python, I generated over 30,000 data points, reducing manual processing time by 50% and enhancing model efficiency.
 
@@ -207,7 +206,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: "easeInOut" }}
               >
-                <div className="experience-card group bg-white text-black rounded-xl shadow-xl p-6 h-[220px] lg:h-[240px] flex flex-col justify-center transition-all duration-700 ease-in-out hover:shadow-2xl hover:h-[450px] relative overflow-hidden border border-gray-200">
+                <div className="experience-card group bg-white text-black rounded-xl shadow-xl p-6 h-[220px] lg:h-[240px] flex flex-col justify-center hover:shadow-2xl relative overflow-hidden border border-gray-200 transform-gpu">
                   <div className="flex items-center justify-between mb-4">
                     <h2 className="text-xl lg:text-2xl font-bold text-gray-800">Software Engineering Intern</h2>
                     <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">2023</span>
@@ -216,7 +215,7 @@ export default function Home() {
                   <p className="text-gray-600 text-sm mb-4">Jan 2023 - May 2023</p>
                   
                   {/* Expandable Content */}
-                  <div className="details opacity-0 max-h-0 overflow-y-auto transition-all duration-700 ease-in-out group-hover:opacity-100 group-hover:max-h-[300px] group-hover:mt-4">
+                  <div className="details group-hover:mt-4">
                     <p className="text-gray-500 text-sm leading-relaxed">
                       Worked on improving the platform frontend and integrating API-driven features. Implemented responsive design using HTML5, CSS3, and JavaScript frameworks and contributed to RESTful API development for real-time profile booking management.
                     </p>
@@ -226,7 +225,6 @@ export default function Home() {
             </div>
           </div>
         </motion.section>
-      )}
 
       {/* Education Section */}
       <motion.section 

@@ -39,30 +39,216 @@ section {
 
 /* Custom CSS for Experience Card Hover Effect */
 .experience-card {
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform, height, box-shadow;
+  /* Ensure cards don't overflow their container */
+  max-height: 100%;
+  overflow: visible;
+  /* Center the card content for bidirectional expansion */
+  transform-origin: center;
 }
 
 .experience-card:hover {
   /* Removed scale transform - no more zoom effect */
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
+  /* Ensure hover state doesn't cause overflow */
+  z-index: 10;
 }
 
 .experience-card .details {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Ensure smooth height transition */
+  transform: translateY(0);
 }
 
 .experience-card:hover .details {
   opacity: 1;
-  max-height: 400px; /* Increased for better content display */
+  max-height: 50px; /* Controls downward expansion (50px down) */
+  transform: translateY(0);
+}
+
+/* Experience section container improvements */
+#experience {
+  overflow: visible;
+  position: relative;
+}
+
+/* Ensure experience cards container handles overflow properly */
+.experience-item {
+  position: relative;
+  z-index: 1;
+}
+
+.experience-item:hover {
+  z-index: 20;
+}
+
+/* Enhanced bidirectional expansion for experience cards */
+.experience-card {
+  /* Base state */
+  transform: translateY(0);
+  height: 220px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Center the card for bidirectional expansion */
+  transform-origin: center;
+  position: relative;
+  /* Force the card to expand its background */
+  background: white;
+  border-radius: 0.75rem;
+  /* Force hardware acceleration */
+  backface-visibility: hidden;
+  /* Smooth animations instead of transitions */
+  animation: none;
+}
+
+/* Smooth content reveal animation */
+.experience-card .details {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  /* Smooth animations for content */
+  animation: none;
+}
+
+/* Hover state with smooth animations */
+.experience-card:hover {
+  /* Animate the expansion */
+  animation: expandCard 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.experience-card:hover .details {
+  /* Animate the content reveal */
+  animation: revealContent 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* When not hovering, animate back to normal */
+.experience-card:not(:hover) {
+  /* Animate back to normal state */
+  animation: contractCard 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.experience-card:not(:hover) .details {
+  /* Animate content back to hidden */
+  animation: hideContent 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Ensure the card container can handle the upward movement */
+.experience-item {
+  padding: 30px 0;
+  margin: -30px 0;
+}
+
+/* Keyframe animations for smooth expansion */
+@keyframes expandCard {
+  0% {
+    transform: translateY(0);
+    height: 220px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    transform: translateY(-30px);
+    height: 320px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@keyframes contractCard {
+  0% {
+    transform: translateY(-30px);
+    height: 320px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    transform: translateY(0);
+    height: 220px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@keyframes revealContent {
+  0% {
+    opacity: 0;
+    max-height: 0;
+  }
+  100% {
+    opacity: 1;
+    max-height: 300px;
+  }
+}
+
+@keyframes hideContent {
+  0% {
+    opacity: 1;
+    max-height: 300px;
+  }
+  100% {
+    opacity: 0;
+    max-height: 0;
+  }
+}
+
+/* Mobile-specific keyframe animations */
+@keyframes expandCardMobile {
+  0% {
+    transform: translateY(0);
+    height: 220px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    transform: translateY(-30px);
+    height: 300px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@keyframes contractCardMobile {
+  0% {
+    transform: translateY(-30px);
+    height: 300px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    transform: translateY(0);
+    height: 220px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
 }
 
 /* Enhanced mobile-specific improvements */
 @media (max-width: 640px) {
-  /* Removed hover scale effects for mobile */
+  /* Mobile-specific experience card behavior */
+  .experience-card {
+    /* Base state for mobile */
+    transform: translateY(0);
+    height: 220px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .experience-card:hover {
+    /* Animate expansion on mobile */
+    animation: expandCardMobile 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+  
+  .experience-card:not(:hover) {
+    /* Animate back to normal on mobile */
+    animation: contractCardMobile 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+  
+  .experience-card .details {
+    /* Content animations for mobile */
+    animation: none;
+  }
+  
+  .experience-card:hover .details {
+    animation: revealContent 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+  
+  .experience-card:not(:hover) .details {
+    animation: hideContent 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
   
   /* Ensure text doesn't overflow on mobile */
   h1, h2, h3, p {
@@ -122,21 +308,19 @@ button, a {
   scroll-behavior: smooth;
 }
 
-/* Experience section hover effects - removed scaling */
+/* Experience section hover effects - simplified for smoothness */
 .experience-item:hover .experience-card {
-  /* Removed scale transform */
   z-index: 20;
 }
 
-/* Fade other cards when one is hovered */
+/* Fade other cards when one is hovered - smoother transitions */
 .experience-item:not(:hover) {
-  opacity: 0.4;
-  transition: opacity 0.7s ease-in-out;
+  opacity: 0.6;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .experience-item:not(:hover) .experience-card {
-  /* Removed scale transform */
-  transition: opacity 0.7s ease-in-out;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Ensure the hovered card stays prominent */
