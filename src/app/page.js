@@ -43,6 +43,279 @@ export default function Home() {
         </motion.div>
       </section>
 
+      {/* Skills Section */}
+      <motion.section
+        id="skills"
+        className="min-h-screen flex flex-col items-center justify-start bg-[#0C2851] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 pt-6 sm:pt-8 lg:pt-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
+      >
+        <motion.h1 
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white text-left w-full max-w-7xl mb-8 sm:mb-10 lg:mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          Technical Skills
+        </motion.h1>
+        
+        <div className="w-full max-w-7xl">
+          {/* Skills Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            
+            {/* Frontend Skills */}
+            <motion.div
+              className="bg-[#11346A] rounded-xl p-6"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
+              <h3 className="text-xl font-bold text-white mb-4">Frontend</h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">N</div>
+                  <div>
+                    <p className="text-white font-bold">Next.js</p>
+                    <p className="text-gray-400 text-sm">Rendering Framework</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">⚛</div>
+                  <div>
+                    <p className="text-white font-bold">React.js</p>
+                    <p className="text-gray-400 text-sm">Web UI Library</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">S</div>
+                  <div>
+                    <p className="text-white font-bold">Svelte</p>
+                    <p className="text-gray-400 text-sm">Web UI Library</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-cyan-500 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">T</div>
+                  <div>
+                    <p className="text-white font-bold">Tailwind CSS</p>
+                    <p className="text-gray-400 text-sm">CSS Framework</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Backend Skills */}
+            <motion.div
+              className="bg-[#11346A] rounded-xl p-6"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h3 className="text-xl font-bold text-white mb-4">Backend</h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-green-500 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">node</div>
+                  <div>
+                    <p className="text-white font-bold">Node.js</p>
+                    <p className="text-gray-400 text-sm">JavaScript runtime</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-gray-600 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">E</div>
+                  <div>
+                    <p className="text-white font-bold">Express.js</p>
+                    <p className="text-gray-400 text-sm">JS Backend Framework</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-white rounded flex items-center justify-center text-black font-bold text-xs flex-shrink-0">F</div>
+                  <div>
+                    <p className="text-white font-bold">Flask</p>
+                    <p className="text-gray-400 text-sm">Backend Framework</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-green-600 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">DJ</div>
+                  <div>
+                    <p className="text-white font-bold">Django</p>
+                    <p className="text-gray-400 text-sm">Backend Framework</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Databases Skills */}
+            <motion.div
+              className="bg-[#11346A] rounded-xl p-6"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <h3 className="text-xl font-bold text-white mb-4">Databases</h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-green-500 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">🍃</div>
+                  <div>
+                    <p className="text-white font-bold">MongoDB</p>
+                    <p className="text-gray-400 text-sm">NoSQL Database</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-pink-500 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">Q</div>
+                  <div>
+                    <p className="text-white font-bold">GraphQL</p>
+                    <p className="text-gray-400 text-sm">API Query Language</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">🐘</div>
+                  <div>
+                    <p className="text-white font-bold">PostgreSQL</p>
+                    <p className="text-gray-400 text-sm">Relational Database</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">M</div>
+                  <div>
+                    <p className="text-white font-bold">MySQL</p>
+                    <p className="text-gray-400 text-sm">Relational Database</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* DevOps Skills */}
+            <motion.div
+              className="bg-[#11346A] rounded-xl p-6"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <h3 className="text-xl font-bold text-white mb-4">DevOps</h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">🐳</div>
+                  <div>
+                    <p className="text-white font-bold">Docker</p>
+                    <p className="text-gray-400 text-sm">Container Creation</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">⚓</div>
+                  <div>
+                    <p className="text-white font-bold">Kubernetes</p>
+                    <p className="text-gray-400 text-sm">Container Orchestration</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-purple-600 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">T</div>
+                  <div>
+                    <p className="text-white font-bold">Terraform</p>
+                    <p className="text-gray-400 text-sm">Infra-as-a-Service</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-gray-400 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">☁</div>
+                  <div>
+                    <p className="text-white font-bold">AWS, Azure, GCP</p>
+                    <p className="text-gray-400 text-sm">Cloud Services</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Machine Learning Skills */}
+            <motion.div
+              className="bg-[#11346A] rounded-xl p-6"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              <h3 className="text-xl font-bold text-white mb-4">Machine Learning</h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">P</div>
+                  <div>
+                    <p className="text-white font-bold">PyTorch</p>
+                    <p className="text-gray-400 text-sm">Deep Learning Framework</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-yellow-500 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">😊</div>
+                  <div>
+                    <p className="text-white font-bold">Hugging Face</p>
+                    <p className="text-gray-400 text-sm">Transformer Library</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-orange-600 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">T</div>
+                  <div>
+                    <p className="text-white font-bold">TensorFlow</p>
+                    <p className="text-gray-400 text-sm">Deep Learning Framework</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">SK</div>
+                  <div>
+                    <p className="text-white font-bold">SKLearn</p>
+                    <p className="text-gray-400 text-sm">ML Toolkit</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Mobile Skills */}
+            <motion.div
+              className="bg-[#11346A] rounded-xl p-6"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <h3 className="text-xl font-bold text-white mb-4">Mobile</h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-white rounded flex items-center justify-center text-black font-bold text-xs flex-shrink-0">RN</div>
+                  <div>
+                    <p className="text-white font-bold">React Native + Expo</p>
+                    <p className="text-gray-400 text-sm">Mobile Dev Framework</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">🐦</div>
+                  <div>
+                    <p className="text-white font-bold">Swift</p>
+                    <p className="text-gray-400 text-sm">iOS Development</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">OBJ</div>
+                  <div>
+                    <p className="text-white font-bold">Objective C</p>
+                    <p className="text-gray-400 text-sm">iOS & MacOS Development</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-green-500 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">C</div>
+                  <div>
+                    <p className="text-white font-bold">Jetpack Compose</p>
+                    <p className="text-gray-400 text-sm">Android Development</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+
+          </div>
+        </div>
+      </motion.section>
+
       {/* Experience Section - Timeline-Based */}
       <motion.section
         id="experience"
@@ -293,17 +566,14 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed">
-              I'm a 22-year-old embracing both the struggles and successes on my journey through the world of data science.
+            <p className="leading-relaxed">
+              I'm 23, and while coding keeps me busy, I try to keep life balanced with passions that go beyond the screen.
             </p>
             <p className="leading-relaxed">
-              Tech is a big part of my life, but beyond coding, I find joy in many different things.
-              I work as a part-time event manager at my university's Student Union, where I've managed over 100 events,
-              handling everything from logistics and coordinating AV Tech to problem-solving on the fly.
+              At my university's Student Union, I've worked as a part-time event manager, running 100+ events where I got to juggle logistics, AV tech, and the kind of problem-solving that doesn't come with a manual.
             </p>
             <p className="leading-relaxed">
-              I have a passion for photography and filmmaking, I am loving the work of director Mike Flanagan currently.
-              I like cooking and reading poems. Lately, I've been on a quest to incorporate more protein into my diet as a vegetarian.
+              Outside of work, I enjoy photography and filmmaking (currently obsessed with Mike Flanagan's storytelling style). I also love cooking, experimenting with vegetarian recipes, and reading poetry when I need to slow down.
             </p>
           </motion.div>
         </div>

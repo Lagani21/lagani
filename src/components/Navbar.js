@@ -13,7 +13,7 @@ export default function Navbar() {
     
     // Detect initial section based on scroll position or URL hash
     const detectInitialSection = () => {
-      const sections = ["home", "experience", "education", "beyond code"];
+      const sections = ["home", "skills", "experience", "education", "beyond code"];
       let currentSection = "home";
 
       sections.forEach((section) => {
@@ -38,7 +38,7 @@ export default function Navbar() {
     if (!hasMounted) return;
 
     const handleScroll = () => {
-      const sections = ["home", "experience", "education", "beyond code"];
+      const sections = ["home", "skills", "experience", "education", "beyond code"];
       let currentSection = "home";
 
       sections.forEach((section) => {
@@ -75,6 +75,8 @@ export default function Navbar() {
         return "bg-[#173162]";
       case "education":
         return "bg-[#8194B8]";
+      case "skills":
+        return "bg-[#0C2851]";
       case "about":
         return "bg-[#7586A9]";
       case "beyond code":
@@ -118,6 +120,7 @@ export default function Navbar() {
       <div className="hidden sm:flex space-x-4 md:space-x-6 lg:space-x-8">
         {[
           "home",
+          "skills",
           "experience",
           "education",
           "beyond code",
@@ -182,6 +185,7 @@ export default function Navbar() {
           <div className="flex flex-col space-y-2 p-4">
             {[
               "home",
+              "skills",
               "experience",
               "education",
               "beyond code",
