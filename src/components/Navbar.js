@@ -129,7 +129,7 @@ export default function Navbar() {
           <button
             key={section}
             onClick={() => handleNavClick(section)}
-            className={`px-3 md:px-4 lg:px-5 py-2 text-sm md:text-base lg:text-lg transition-all duration-300 rounded-lg hover:bg-white/10 ${
+            className={`px-3 md:px-4 lg:px-5 py-2 text-sm md:text-base lg:text-lg transition-all duration-300 rounded-lg ${
               activeSection === section ? "font-bold scale-105" : "hover:scale-105"
             }`}
           >
@@ -144,7 +144,7 @@ export default function Navbar() {
       <div className="sm:hidden">
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`p-2 rounded-lg hover:bg-white/10 transition-all duration-300 ${getNavbarTextColor()}`}
+          className={`p-2 rounded-lg transition-all duration-300 ${getNavbarTextColor()}`}
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         >
           {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -157,7 +157,7 @@ export default function Navbar() {
           href="https://github.com/Lagani21"
           target="_blank"
           rel="noopener noreferrer"
-          className={`p-2 rounded-lg hover:bg-white/10 transition-all duration-300 ${getNavbarTextColor()}`}
+          className={`p-2 rounded-lg transition-all duration-300 ${getNavbarTextColor()}`}
           aria-label="GitHub"
         >
           <FaGithubSquare size={20} className="md:w-6 md:h-6" />
@@ -166,14 +166,14 @@ export default function Navbar() {
           href="https://www.linkedin.com/in/laganipatel/"
           target="_blank"
           rel="noopener noreferrer"
-          className={`p-2 rounded-lg hover:bg-white/10 transition-all duration-300 ${getNavbarTextColor()}`}
+          className={`p-2 rounded-lg transition-all duration-300 ${getNavbarTextColor()}`}
           aria-label="LinkedIn"
         >
           <FaLinkedin size={20} className="md:w-6 md:h-6" />
         </a>
         <a
           href="mailto:laganipatel@gmail.com"
-          className={`p-2 rounded-lg hover:bg-white/10 transition-all duration-300 ${getNavbarTextColor()}`}
+          className={`p-2 rounded-lg transition-all duration-300 ${getNavbarTextColor()}`}
           aria-label="Email"
         >
           <FaEnvelope size={20} className="md:w-6 md:h-6" />
@@ -182,7 +182,7 @@ export default function Navbar() {
           href="https://drive.google.com/file/d/1F75wAafrMNYgek_e34r7SMgc0kCysbdT/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
-          className={`p-2 rounded-lg hover:bg-white/10 transition-all duration-300 ${getNavbarTextColor()}`}
+          className={`p-2 rounded-lg transition-all duration-300 ${getNavbarTextColor()}`}
           aria-label="Resume"
         >
           <FaFileAlt size={20} className="md:w-6 md:h-6" />
