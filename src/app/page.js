@@ -56,7 +56,7 @@ export default function Home() {
         transition={{ duration: 1.5, ease: "easeInOut" }}
       >
         <motion.h1 
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white text-center w-full max-w-7xl mb-8 sm:mb-10 lg:mb-12"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white text-center w-full max-w-7xl mb-4 sm:mb-6 lg:mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -319,7 +319,7 @@ export default function Home() {
         <div className="w-full max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             
-            {/* Project 1 */}
+            {/* Project 1 - AI Image Compression */}
             <motion.div
               className="bg-[#1F4284] rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700"
               initial={{ opacity: 0, y: 50 }}
@@ -327,22 +327,22 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
-              <h3 className="text-2xl font-bold text-white mb-3">AI Wildlife Monitoring System</h3>
+              <h3 className="text-2xl font-bold text-white mb-3">AI-Driven Image Compression</h3>
               <p className="text-gray-300 mb-4 leading-relaxed">
-                Developed an end-to-end AI pipeline for automated wildlife detection and classification using PyTorch and Hugging Face transformers. Processes 100,000+ images with depth estimation for precise animal positioning.
+                Trained and evaluated generative models (VQ-VAE, GANs, Diffusion) for domain-specific image compression, achieving a 15% improvement in SSIM and reducing perceptual loss by 20% over JPEG/WebP.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 <span className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full">PyTorch</span>
-                <span className="px-3 py-1 bg-yellow-500 text-white text-sm rounded-full">Hugging Face</span>
-                <span className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">Python</span>
-                <span className="px-3 py-1 bg-green-500 text-white text-sm rounded-full">Computer Vision</span>
+                <span className="px-3 py-1 bg-purple-500 text-white text-sm rounded-full">VQ-VAE</span>
+                <span className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">GANs</span>
+                <span className="px-3 py-1 bg-green-500 text-white text-sm rounded-full">Diffusion Models</span>
               </div>
               <div className="flex gap-3">
                 <span className="text-blue-400 hover:text-blue-300 cursor-pointer">View Details →</span>
               </div>
             </motion.div>
 
-            {/* Project 2 */}
+            {/* Project 2 - Interactive Digital Book */}
             <motion.div
               className="bg-[#1F4284] rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700"
               initial={{ opacity: 0, y: 50 }}
@@ -350,22 +350,22 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h3 className="text-2xl font-bold text-white mb-3">Thermal Conductivity Predictor</h3>
+              <h3 className="text-2xl font-bold text-white mb-3">Interactive Digital Book</h3>
               <p className="text-gray-300 mb-4 leading-relaxed">
-                Built ML models to predict thermal conductivity profiles with 25% improved accuracy. Integrated MATLAB API with Python to generate 30,000+ data points and reduced processing time by 50%.
+                Designed and implemented an E-Textbook platform with normalized MySQL schemas, reducing data redundancy by 35% and supporting over 10,000 assessment records across user roles and course mappings.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 <span className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">Python</span>
-                <span className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full">SKLearn</span>
-                <span className="px-3 py-1 bg-red-500 text-white text-sm rounded-full">MATLAB</span>
-                <span className="px-3 py-1 bg-purple-500 text-white text-sm rounded-full">ML</span>
+                <span className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full">MySQL</span>
+                <span className="px-3 py-1 bg-green-500 text-white text-sm rounded-full">PostgreSQL</span>
+                <span className="px-3 py-1 bg-purple-500 text-white text-sm rounded-full">Database Design</span>
               </div>
               <div className="flex gap-3">
                 <span className="text-blue-400 hover:text-blue-300 cursor-pointer">View Details →</span>
               </div>
             </motion.div>
 
-            {/* Project 3 */}
+            {/* Project 3 - Antar iOS App */}
             <motion.div
               className="bg-[#1F4284] rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700"
               initial={{ opacity: 0, y: 50 }}
@@ -373,22 +373,22 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <h3 className="text-2xl font-bold text-white mb-3">Full-Stack Web Platform</h3>
+              <h3 className="text-2xl font-bold text-white mb-3">Antar iOS App</h3>
               <p className="text-gray-300 mb-4 leading-relaxed">
-                Created a responsive web application with React frontend and Node.js backend. Implemented RESTful APIs, real-time data synchronization, and integrated PostgreSQL database with optimized queries.
+                iOS app for scheduling posts for Instagram. Features automated posting, content calendar management, and analytics tracking to optimize social media presence and engagement.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
-                <span className="px-3 py-1 bg-blue-600 text-white text-sm rounded-full">React</span>
-                <span className="px-3 py-1 bg-green-500 text-white text-sm rounded-full">Node.js</span>
-                <span className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">PostgreSQL</span>
-                <span className="px-3 py-1 bg-gray-600 text-white text-sm rounded-full">Express</span>
+                <span className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">Swift</span>
+                <span className="px-3 py-1 bg-purple-500 text-white text-sm rounded-full">iOS</span>
+                <span className="px-3 py-1 bg-pink-500 text-white text-sm rounded-full">Instagram API</span>
+                <span className="px-3 py-1 bg-green-500 text-white text-sm rounded-full">Social Media</span>
               </div>
               <div className="flex gap-3">
                 <span className="text-blue-400 hover:text-blue-300 cursor-pointer">View Details →</span>
               </div>
             </motion.div>
 
-            {/* Project 4 */}
+            {/* Project 4 - Python Code Comment Generator */}
             <motion.div
               className="bg-[#1F4284] rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700"
               initial={{ opacity: 0, y: 50 }}
@@ -396,15 +396,15 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <h3 className="text-2xl font-bold text-white mb-3">Mobile App with React Native</h3>
+              <h3 className="text-2xl font-bold text-white mb-3">Python Code Comment Generator</h3>
               <p className="text-gray-300 mb-4 leading-relaxed">
-                Developed cross-platform mobile application using React Native and Expo. Features include real-time notifications, offline functionality, and seamless integration with cloud services.
+                A Streamlit app that uses Groq's LLaMA 3 model to automatically add explanatory comments to Python code. Features include code upload, line-by-line comments, and free Groq API integration.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
-                <span className="px-3 py-1 bg-blue-400 text-white text-sm rounded-full">React Native</span>
-                <span className="px-3 py-1 bg-white text-black text-sm rounded-full">Expo</span>
-                <span className="px-3 py-1 bg-yellow-500 text-white text-sm rounded-full">Firebase</span>
-                <span className="px-3 py-1 bg-purple-500 text-white text-sm rounded-full">API</span>
+                <span className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">Streamlit</span>
+                <span className="px-3 py-1 bg-purple-500 text-white text-sm rounded-full">LLaMA 3</span>
+                <span className="px-3 py-1 bg-green-500 text-white text-sm rounded-full">Groq API</span>
+                <span className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full">Python</span>
               </div>
               <div className="flex gap-3">
                 <span className="text-blue-400 hover:text-blue-300 cursor-pointer">View Details →</span>

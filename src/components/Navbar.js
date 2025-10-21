@@ -38,7 +38,7 @@ export default function Navbar() {
     if (!hasMounted) return;
 
     const handleScroll = () => {
-      const sections = ["home", "skills", "experience", "education", "beyond code"];
+      const sections = ["home", "skills", "projects", "experience", "education", "beyond code"];
       let currentSection = "home";
 
       sections.forEach((section) => {
