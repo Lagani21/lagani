@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { FaLinkedin, FaEnvelope, FaGithubSquare, FaBars, FaTimes } from "react-icons/fa";
+import { FaLinkedin, FaEnvelope, FaGithubSquare, FaBars, FaTimes, FaFileAlt } from "react-icons/fa";
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
@@ -177,6 +177,15 @@ export default function Navbar() {
           aria-label="Email"
         >
           <FaEnvelope size={20} className="md:w-6 md:h-6" />
+        </a>
+        <a
+          href="https://drive.google.com/file/d/1F75wAafrMNYgek_e34r7SMgc0kCysbdT/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`p-2 rounded-lg hover:bg-white/10 transition-all duration-300 ${getNavbarTextColor()}`}
+          aria-label="Resume"
+        >
+          <FaFileAlt size={20} className="md:w-6 md:h-6" />
         </a>
       </div>
 
