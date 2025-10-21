@@ -27,17 +27,21 @@ export default function Home() {
           <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl mt-4 sm:mt-6 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
             <span className="text-gray-300">I build </span>
             <span className="text-blue-400 font-bold text-center min-h-[1.5em] flex items-center justify-center">
-              <ReactTyped
-                strings={[
-                  "intelligent systems.",
-                  "interactive applications.",
-                  "data-driven solutions.",
-                ]}
-                typeSpeed={50}
-                backSpeed={30}
-                loop
-                className="min-h-[1.5em] flex items-center justify-center"
-              />
+              {mounted ? (
+                <ReactTyped
+                  strings={[
+                    "intelligent systems.",
+                    "interactive applications.",
+                    "data-driven solutions.",
+                  ]}
+                  typeSpeed={50}
+                  backSpeed={30}
+                  loop
+                  className="min-h-[1.5em] flex items-center justify-center"
+                />
+              ) : (
+                <span className="min-h-[1.5em] flex items-center justify-center">intelligent systems.</span>
+              )}
             </span>
           </div>
         </motion.div>
@@ -316,10 +320,127 @@ export default function Home() {
         </div>
       </motion.section>
 
+      {/* Projects Section */}
+      <motion.section
+        id="projects"
+        className="min-h-screen flex flex-col items-center justify-start bg-[#173162] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 pt-20 sm:pt-24 lg:pt-28"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
+      >
+        <motion.h1 
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white text-center mb-8 sm:mb-10 lg:mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          Projects
+        </motion.h1>
+
+        <div className="w-full max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            
+            {/* Project 1 */}
+            <motion.div
+              className="bg-[#1F4284] rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
+              <h3 className="text-2xl font-bold text-white mb-3">AI Wildlife Monitoring System</h3>
+              <p className="text-gray-300 mb-4 leading-relaxed">
+                Developed an end-to-end AI pipeline for automated wildlife detection and classification using PyTorch and Hugging Face transformers. Processes 100,000+ images with depth estimation for precise animal positioning.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full">PyTorch</span>
+                <span className="px-3 py-1 bg-yellow-500 text-white text-sm rounded-full">Hugging Face</span>
+                <span className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">Python</span>
+                <span className="px-3 py-1 bg-green-500 text-white text-sm rounded-full">Computer Vision</span>
+              </div>
+              <div className="flex gap-3">
+                <span className="text-blue-400 hover:text-blue-300 cursor-pointer">View Details →</span>
+              </div>
+            </motion.div>
+
+            {/* Project 2 */}
+            <motion.div
+              className="bg-[#1F4284] rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h3 className="text-2xl font-bold text-white mb-3">Thermal Conductivity Predictor</h3>
+              <p className="text-gray-300 mb-4 leading-relaxed">
+                Built ML models to predict thermal conductivity profiles with 25% improved accuracy. Integrated MATLAB API with Python to generate 30,000+ data points and reduced processing time by 50%.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">Python</span>
+                <span className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full">SKLearn</span>
+                <span className="px-3 py-1 bg-red-500 text-white text-sm rounded-full">MATLAB</span>
+                <span className="px-3 py-1 bg-purple-500 text-white text-sm rounded-full">ML</span>
+              </div>
+              <div className="flex gap-3">
+                <span className="text-blue-400 hover:text-blue-300 cursor-pointer">View Details →</span>
+              </div>
+            </motion.div>
+
+            {/* Project 3 */}
+            <motion.div
+              className="bg-[#1F4284] rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <h3 className="text-2xl font-bold text-white mb-3">Full-Stack Web Platform</h3>
+              <p className="text-gray-300 mb-4 leading-relaxed">
+                Created a responsive web application with React frontend and Node.js backend. Implemented RESTful APIs, real-time data synchronization, and integrated PostgreSQL database with optimized queries.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-3 py-1 bg-blue-600 text-white text-sm rounded-full">React</span>
+                <span className="px-3 py-1 bg-green-500 text-white text-sm rounded-full">Node.js</span>
+                <span className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">PostgreSQL</span>
+                <span className="px-3 py-1 bg-gray-600 text-white text-sm rounded-full">Express</span>
+              </div>
+              <div className="flex gap-3">
+                <span className="text-blue-400 hover:text-blue-300 cursor-pointer">View Details →</span>
+              </div>
+            </motion.div>
+
+            {/* Project 4 */}
+            <motion.div
+              className="bg-[#1F4284] rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <h3 className="text-2xl font-bold text-white mb-3">Mobile App with React Native</h3>
+              <p className="text-gray-300 mb-4 leading-relaxed">
+                Developed cross-platform mobile application using React Native and Expo. Features include real-time notifications, offline functionality, and seamless integration with cloud services.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-3 py-1 bg-blue-400 text-white text-sm rounded-full">React Native</span>
+                <span className="px-3 py-1 bg-white text-black text-sm rounded-full">Expo</span>
+                <span className="px-3 py-1 bg-yellow-500 text-white text-sm rounded-full">Firebase</span>
+                <span className="px-3 py-1 bg-purple-500 text-white text-sm rounded-full">API</span>
+              </div>
+              <div className="flex gap-3">
+                <span className="text-blue-400 hover:text-blue-300 cursor-pointer">View Details →</span>
+              </div>
+            </motion.div>
+
+          </div>
+        </div>
+      </motion.section>
+
       {/* Experience Section - Timeline-Based */}
       <motion.section
         id="experience"
-        className="min-h-screen flex flex-col items-center justify-start text-black bg-[#173162] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 pt-20 sm:pt-24 lg:pt-28 overflow-visible"
+        className="min-h-screen flex flex-col items-center justify-start text-black bg-[#4C638D] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 pt-20 sm:pt-24 lg:pt-28 overflow-visible"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, ease: "easeInOut" }}
