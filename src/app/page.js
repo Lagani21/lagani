@@ -301,7 +301,7 @@ export default function Home() {
       {/* Projects Section */}
       <motion.section
         id="projects"
-        className="min-h-screen flex flex-col items-center justify-start bg-[#173162] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 pt-0 sm:pt-2 lg:pt-4"
+        className="min-h-screen flex flex-col items-center justify-start bg-[#173162] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 pt-8 sm:pt-10 lg:pt-12"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, ease: "easeInOut" }}
@@ -337,9 +337,6 @@ export default function Home() {
                 <span className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">GANs</span>
                 <span className="px-3 py-1 bg-green-500 text-white text-sm rounded-full">Diffusion Models</span>
               </div>
-              <div className="flex gap-3">
-                <span className="text-blue-400 hover:text-blue-300 cursor-pointer">View Details →</span>
-              </div>
             </motion.div>
 
             {/* Project 2 - Interactive Digital Book */}
@@ -359,9 +356,6 @@ export default function Home() {
                 <span className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full">MySQL</span>
                 <span className="px-3 py-1 bg-green-500 text-white text-sm rounded-full">PostgreSQL</span>
                 <span className="px-3 py-1 bg-purple-500 text-white text-sm rounded-full">Database Design</span>
-              </div>
-              <div className="flex gap-3">
-                <span className="text-blue-400 hover:text-blue-300 cursor-pointer">View Details →</span>
               </div>
             </motion.div>
 
@@ -383,9 +377,6 @@ export default function Home() {
                 <span className="px-3 py-1 bg-pink-500 text-white text-sm rounded-full">Instagram API</span>
                 <span className="px-3 py-1 bg-green-500 text-white text-sm rounded-full">Social Media</span>
               </div>
-              <div className="flex gap-3">
-                <span className="text-blue-400 hover:text-blue-300 cursor-pointer">View Details →</span>
-              </div>
             </motion.div>
 
             {/* Project 4 - Python Code Comment Generator */}
@@ -405,9 +396,6 @@ export default function Home() {
                 <span className="px-3 py-1 bg-purple-500 text-white text-sm rounded-full">LLaMA 3</span>
                 <span className="px-3 py-1 bg-green-500 text-white text-sm rounded-full">Groq API</span>
                 <span className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full">Python</span>
-              </div>
-              <div className="flex gap-3">
-                <span className="text-blue-400 hover:text-blue-300 cursor-pointer">View Details →</span>
               </div>
             </motion.div>
 
@@ -449,7 +437,7 @@ export default function Home() {
                   <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">2025</span>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-700 mb-3">NC Museum of Natural Sciences</h3>
-                <p className="text-gray-600 text-sm mb-4">Oct 2024 - Present</p>
+                <p className="text-gray-600 text-sm mb-4">Oct 2024 - July 2025</p>
                 <div className="details">
                   <p className="text-gray-500 text-sm leading-relaxed">
                     Developing AI-driven solutions to improve wildlife monitoring across the United States. By integrating AI into our workflow, we're reducing the need for manual processing and improving classification across large datasets. One of the key aspects of our work involves depth estimation models for calibrated data, processing over 100,000+ camera trap images from diverse ecosystems.
@@ -528,7 +516,7 @@ export default function Home() {
                     <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">2025</span>
                   </div>
                   <h3 className="text-lg lg:text-xl font-semibold text-gray-700 mb-3">NC Museum of Natural Sciences</h3>
-                  <p className="text-gray-600 text-sm mb-4">Oct 2024 - Present</p>
+                  <p className="text-gray-600 text-sm mb-4">Oct 2024 - July 2025</p>
                   
                   {/* Expandable Content */}
                   <div className="details group-hover:mt-4">
