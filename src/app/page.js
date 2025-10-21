@@ -50,13 +50,13 @@ export default function Home() {
       {/* Skills Section */}
       <motion.section
         id="skills"
-        className="min-h-screen flex flex-col items-center justify-start bg-[#0C2851] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 pt-6 sm:pt-8 lg:pt-10"
+        className="min-h-screen flex flex-col items-center justify-start bg-[#0C2851] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 pt-0 sm:pt-2 lg:pt-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, ease: "easeInOut" }}
       >
         <motion.h1 
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white text-left w-full max-w-7xl mb-8 sm:mb-10 lg:mb-12"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white text-center w-full max-w-7xl mb-8 sm:mb-10 lg:mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -69,7 +69,7 @@ export default function Home() {
           {/* Skills Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             
-            {/* Frontend Skills */}
+            {/* Machine Learning Skills */}
             <motion.div
               className="bg-[#11346A] rounded-xl p-6"
               initial={{ opacity: 0, y: 50 }}
@@ -77,34 +77,34 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
-              <h3 className="text-xl font-bold text-white mb-4">Frontend</h3>
+              <h3 className="text-xl font-bold text-white mb-4">Machine Learning</h3>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">N</div>
+                  <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">P</div>
                   <div>
-                    <p className="text-white font-bold">Next.js</p>
-                    <p className="text-gray-400 text-sm">Rendering Framework</p>
+                    <p className="text-white font-bold">PyTorch</p>
+                    <p className="text-gray-400 text-sm">Deep Learning Framework</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">⚛</div>
+                  <div className="w-8 h-8 bg-yellow-500 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">😊</div>
                   <div>
-                    <p className="text-white font-bold">React.js</p>
-                    <p className="text-gray-400 text-sm">Web UI Library</p>
+                    <p className="text-white font-bold">Hugging Face</p>
+                    <p className="text-gray-400 text-sm">Transformer Library</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">S</div>
+                  <div className="w-8 h-8 bg-orange-600 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">T</div>
                   <div>
-                    <p className="text-white font-bold">Svelte</p>
-                    <p className="text-gray-400 text-sm">Web UI Library</p>
+                    <p className="text-white font-bold">TensorFlow</p>
+                    <p className="text-gray-400 text-sm">Deep Learning Framework</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-cyan-500 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">T</div>
+                  <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">SK</div>
                   <div>
-                    <p className="text-white font-bold">Tailwind CSS</p>
-                    <p className="text-gray-400 text-sm">CSS Framework</p>
+                    <p className="text-white font-bold">SKLearn</p>
+                    <p className="text-gray-400 text-sm">ML Toolkit</p>
                   </div>
                 </div>
               </div>
@@ -217,13 +217,6 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-purple-600 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">T</div>
-                  <div>
-                    <p className="text-white font-bold">Terraform</p>
-                    <p className="text-gray-400 text-sm">Infra-as-a-Service</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
                   <div className="w-8 h-8 bg-gray-400 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">☁</div>
                   <div>
                     <p className="text-white font-bold">AWS, Azure, GCP</p>
@@ -233,7 +226,7 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* Machine Learning Skills */}
+            {/* Frontend Skills */}
             <motion.div
               className="bg-[#11346A] rounded-xl p-6"
               initial={{ opacity: 0, y: 50 }}
@@ -241,34 +234,27 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <h3 className="text-xl font-bold text-white mb-4">Machine Learning</h3>
+              <h3 className="text-xl font-bold text-white mb-4">Frontend</h3>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">P</div>
+                  <div className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">N</div>
                   <div>
-                    <p className="text-white font-bold">PyTorch</p>
-                    <p className="text-gray-400 text-sm">Deep Learning Framework</p>
+                    <p className="text-white font-bold">Next.js</p>
+                    <p className="text-gray-400 text-sm">Rendering Framework</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-yellow-500 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">😊</div>
+                  <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">⚛</div>
                   <div>
-                    <p className="text-white font-bold">Hugging Face</p>
-                    <p className="text-gray-400 text-sm">Transformer Library</p>
+                    <p className="text-white font-bold">React.js</p>
+                    <p className="text-gray-400 text-sm">Web UI Library</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-orange-600 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">T</div>
+                  <div className="w-8 h-8 bg-cyan-500 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">T</div>
                   <div>
-                    <p className="text-white font-bold">TensorFlow</p>
-                    <p className="text-gray-400 text-sm">Deep Learning Framework</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">SK</div>
-                  <div>
-                    <p className="text-white font-bold">SKLearn</p>
-                    <p className="text-gray-400 text-sm">ML Toolkit</p>
+                    <p className="text-white font-bold">Tailwind CSS</p>
+                    <p className="text-gray-400 text-sm">CSS Framework</p>
                   </div>
                 </div>
               </div>
@@ -299,13 +285,6 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">OBJ</div>
-                  <div>
-                    <p className="text-white font-bold">Objective C</p>
-                    <p className="text-gray-400 text-sm">iOS & MacOS Development</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
                   <div className="w-8 h-8 bg-green-500 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">C</div>
                   <div>
                     <p className="text-white font-bold">Jetpack Compose</p>
@@ -315,7 +294,6 @@ export default function Home() {
               </div>
             </motion.div>
 
-
           </div>
         </div>
       </motion.section>
@@ -323,7 +301,7 @@ export default function Home() {
       {/* Projects Section */}
       <motion.section
         id="projects"
-        className="min-h-screen flex flex-col items-center justify-start bg-[#173162] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 pt-20 sm:pt-24 lg:pt-28"
+        className="min-h-screen flex flex-col items-center justify-start bg-[#173162] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 pt-0 sm:pt-2 lg:pt-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, ease: "easeInOut" }}
