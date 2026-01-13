@@ -377,9 +377,17 @@ export default function Home() {
                 <span className="px-3 py-1 bg-pink-500 text-white text-sm rounded-full">Instagram API</span>
                 <span className="px-3 py-1 bg-green-500 text-white text-sm rounded-full">Social Media</span>
               </div>
+              <a
+                href="https://github.com/Lagani21/Antar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white/20"
+              >
+                View on GitHub
+              </a>
             </motion.div>
 
-            {/* Project 4 - Python Code Comment Generator */}
+            {/* Project 4 - Shanti AI Voice Agent */}
             <motion.div
               className="bg-[#1F4284] rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700"
               initial={{ opacity: 0, y: 50 }}
@@ -387,16 +395,24 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <h3 className="text-2xl font-bold text-white mb-3">Python Code Comment Generator</h3>
+              <h3 className="text-2xl font-bold text-white mb-3">Shanti AI Voice Agent</h3>
               <p className="text-gray-300 mb-4 leading-relaxed">
-                A Streamlit app that uses Groq's LLaMA 3 model to automatically add explanatory comments to Python code. Features include code upload, line-by-line comments, and free Groq API integration.
+                Voice-first AI companion with session history, insights, and function calling. Built with Next.js, Prisma, and WebRTC, with real-time STT/TTS using OpenAI and Deepgram.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
-                <span className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">Streamlit</span>
-                <span className="px-3 py-1 bg-purple-500 text-white text-sm rounded-full">LLaMA 3</span>
-                <span className="px-3 py-1 bg-green-500 text-white text-sm rounded-full">Groq API</span>
-                <span className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full">Python</span>
+                <span className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">Next.js</span>
+                <span className="px-3 py-1 bg-purple-500 text-white text-sm rounded-full">Prisma</span>
+                <span className="px-3 py-1 bg-green-500 text-white text-sm rounded-full">OpenAI</span>
+                <span className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full">Deepgram</span>
               </div>
+              <a
+                href="https://github.com/Lagani21/shanti_ai_voice_agent"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white/20"
+              >
+                View on GitHub
+              </a>
             </motion.div>
 
           </div>
