@@ -67,7 +67,7 @@ const ManifestSidebar = () => (
     
     <div className="manifest-group">
       <label className="manifest-label"><span className="pill">02</span> LINKS / કડીઓ</label>
-      <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="manifest-nav-item">
+      <a href="https://drive.google.com/file/d/1UvlLGgf7YlqPIgXCSGEQmrS1b-A6R1Z5/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="manifest-nav-item">
         <span className="nav-item-content">
           <HiDocumentText className="nav-icon" />
           Resume
@@ -88,7 +88,7 @@ const ManifestSidebar = () => (
         </span>
         <span className="manifest-arrow">↗</span>
       </a>
-      <a href="mailto:lagani.dev@proton.me" className="manifest-nav-item" style={{ borderBottom: "none" }}>
+      <a href="mailto:laganipatel@gmail.com" className="manifest-nav-item" style={{ borderBottom: "none" }}>
         <span className="nav-item-content">
           <HiEnvelope className="nav-icon" />
           Email
@@ -252,13 +252,6 @@ export default function Home() {
           <h2 className="section-hero-title">DEVELOPMENT PORTFOLIO</h2>
 
           {[
-            { 
-              title: "FINOPTIMA AI TRADING PLATFORM", 
-              period: "2026", 
-              stack: "PYTHON // PYTORCH // KAFKA // KUBERNETES",
-              desc: "Real-time algorithmic trading platform with ML-driven market prediction models. Built scalable microservices architecture processing 100K+ transactions/second with sub-millisecond latency.",
-              github: null
-            },
             { 
               title: "AI-DRIVEN IMAGE COMPRESSION", 
               period: "2024", 
