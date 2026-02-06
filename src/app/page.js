@@ -2,6 +2,8 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { HiDocumentText, HiHome, HiBriefcase, HiCog8Tooth, HiRocketLaunch, HiAcademicCap, HiUser, HiEnvelope } from "react-icons/hi2";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 function scrollToSection(id) {
   const el = document.getElementById(id);
@@ -20,28 +22,78 @@ const ManifestSidebar = () => (
     <div className="manifest-group">
       <label className="manifest-label"><span className="pill">01</span> DIRECTORY / સૂચિ</label>
       <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection("home"); }} className="manifest-nav-item">
-        <span>Home</span>
+        <span className="nav-item-content">
+          <HiHome className="nav-icon" />
+          Home
+        </span>
         <span className="manifest-arrow">→</span>
       </a>
       <a href="#experience" onClick={(e) => { e.preventDefault(); scrollToSection("experience"); }} className="manifest-nav-item">
-        <span>Experience</span>
+        <span className="nav-item-content">
+          <HiBriefcase className="nav-icon" />
+          Experience
+        </span>
         <span className="manifest-arrow">→</span>
       </a>
       <a href="#skills" onClick={(e) => { e.preventDefault(); scrollToSection("skills"); }} className="manifest-nav-item">
-        <span>Skills</span>
+        <span className="nav-item-content">
+          <HiCog8Tooth className="nav-icon" />
+          Skills
+        </span>
         <span className="manifest-arrow">→</span>
       </a>
       <a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection("projects"); }} className="manifest-nav-item">
-        <span>Projects</span>
+        <span className="nav-item-content">
+          <HiRocketLaunch className="nav-icon" />
+          Projects
+        </span>
         <span className="manifest-arrow">→</span>
       </a>
       <a href="#education" onClick={(e) => { e.preventDefault(); scrollToSection("education"); }} className="manifest-nav-item">
-        <span>Education</span>
+        <span className="nav-item-content">
+          <HiAcademicCap className="nav-icon" />
+          Education
+        </span>
         <span className="manifest-arrow">→</span>
       </a>
-      <a href="#beyond code" onClick={(e) => { e.preventDefault(); scrollToSection("beyond code"); }} className="manifest-nav-item" style={{ borderBottom: "none" }}>
-        <span>About / Identity</span>
+      <a href="#beyond code" onClick={(e) => { e.preventDefault(); scrollToSection("beyond code"); }} className="manifest-nav-item">
+        <span className="nav-item-content">
+          <HiUser className="nav-icon" />
+          About / Identity
+        </span>
         <span className="manifest-arrow">→</span>
+      </a>
+    </div>
+    
+    <div className="manifest-group">
+      <label className="manifest-label"><span className="pill">02</span> LINKS / કડીઓ</label>
+      <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="manifest-nav-item">
+        <span className="nav-item-content">
+          <HiDocumentText className="nav-icon" />
+          Resume
+        </span>
+        <span className="manifest-arrow">↗</span>
+      </a>
+      <a href="https://github.com/laganipatel" target="_blank" rel="noopener noreferrer" className="manifest-nav-item">
+        <span className="nav-item-content">
+          <FaGithub className="nav-icon" />
+          GitHub
+        </span>
+        <span className="manifest-arrow">↗</span>
+      </a>
+      <a href="https://linkedin.com/in/laganipatel" target="_blank" rel="noopener noreferrer" className="manifest-nav-item">
+        <span className="nav-item-content">
+          <FaLinkedin className="nav-icon" />
+          LinkedIn
+        </span>
+        <span className="manifest-arrow">↗</span>
+      </a>
+      <a href="mailto:lagani.dev@proton.me" className="manifest-nav-item" style={{ borderBottom: "none" }}>
+        <span className="nav-item-content">
+          <HiEnvelope className="nav-icon" />
+          Email
+        </span>
+        <span className="manifest-arrow">↗</span>
       </a>
     </div>
   </aside>
@@ -338,7 +390,7 @@ export default function Home() {
                   I've cut my teeth as an event manager, running 100+ events where I juggled logistics, AV tech, and high-pressure problem-solving. It taught me to think on my feet in ways a computer never could.
                 </p>
                 <p>
-                  My downtime is usually spent behind a lens or in front of a movie screen. I also enjoy cooking and reading poetry. (Note: I only read poetry. My code might be poetic, but my actual poems are a syntax error waiting to happen.)
+                  My downtime is usually spent behind a lens or in front of a movie screen. I also enjoy cooking and reading poetry. [Note: I only read poetry. My code might be poetic, but my actual poems are a syntax error waiting to happen.]
                 </p>
               </div>
 

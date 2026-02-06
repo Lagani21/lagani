@@ -265,6 +265,23 @@ html, body {
 .manifest-sidebar-light .manifest-arrow {
   transition: transform 0.2s;
 }
+
+.nav-item-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.manifest-sidebar-light .manifest-nav-item:hover .nav-icon {
+  opacity: 1;
+}
 .manifest-sidebar-light .manifest-stack {
   font-family: var(--font-mono);
   font-size: 0.75rem;
