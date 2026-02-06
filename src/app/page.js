@@ -59,7 +59,7 @@ const ManifestSidebar = () => (
       <a href="#beyond code" onClick={(e) => { e.preventDefault(); scrollToSection("beyond code"); }} className="manifest-nav-item">
         <span className="nav-item-content">
           <HiUser className="nav-icon" />
-          About / Identity
+          Context
         </span>
         <span className="manifest-arrow">→</span>
       </a>
@@ -351,13 +351,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Beyond Code — SYSTEM IDENTITY */}
+      {/* Beyond Code — CONTEXT */}
       <section id="beyond code" className="min-h-screen relative bg-[#EBE5DD] px-6 sm:px-10 md:px-16 lg:px-20 py-12 sm:py-16">
         <div className="landing-grid-bg" aria-hidden="true" />
         <div className="relative z-10 max-w-5xl">
           <div className="landing-tech-mark section-tech-mark tm-tl">USER.BIO v4<br />IDENT_RECORDS</div>
 
-          <h2 className="section-hero-title">SYSTEM IDENTITY</h2>
+          <h2 className="section-hero-title">CONTEXT</h2>
 
           <div className="identity-layout">
             <div className="identity-image-section">
