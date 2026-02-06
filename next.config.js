@@ -1,7 +1,11 @@
 // next.config.js
+const path = require("path");
+
 const nextConfig = {
-  // Remove deprecated experimental.appDir option
-  // Add proper configuration for Next.js 15
+  // Use this directory as the workspace root (fixes "connection failed" when parent has package.json)
+  turbopack: {
+    root: path.resolve(__dirname),
+  },
 };
 
 module.exports = nextConfig;

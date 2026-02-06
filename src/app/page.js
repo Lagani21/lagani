@@ -1,705 +1,362 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
-import { ReactTyped } from "react-typed";
 import { motion } from "framer-motion";
 
-export default function Home() {
-  const [mounted, setMounted] = useState(false);
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+const ManifestSidebar = () => (
+  <aside className="page-sidebar manifest-sidebar-light">
+    <div className="manifest-header">
+      <h2 className="manifest-title">SYSTEM<br />MANIFEST</h2>
+      <div className="manifest-subtitle">
+        <span>V.2024.ALFA</span>
+        <span><span className="manifest-status-dot" />LIVE</span>
+      </div>
+    </div>
+    <div className="manifest-group">
+      <label className="manifest-label"><span className="pill">01</span> DIRECTORY / સૂચિ</label>
+      <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection("home"); }} className="manifest-nav-item">
+        <span>Home</span>
+        <span className="manifest-arrow">→</span>
+      </a>
+      <a href="#experience" onClick={(e) => { e.preventDefault(); scrollToSection("experience"); }} className="manifest-nav-item">
+        <span>Experience</span>
+        <span className="manifest-arrow">→</span>
+      </a>
+      <a href="#skills" onClick={(e) => { e.preventDefault(); scrollToSection("skills"); }} className="manifest-nav-item">
+        <span>Skills</span>
+        <span className="manifest-arrow">→</span>
+      </a>
+      <a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection("projects"); }} className="manifest-nav-item">
+        <span>Projects</span>
+        <span className="manifest-arrow">→</span>
+      </a>
+      <a href="#education" onClick={(e) => { e.preventDefault(); scrollToSection("education"); }} className="manifest-nav-item">
+        <span>Education</span>
+        <span className="manifest-arrow">→</span>
+      </a>
+      <a href="#beyond code" onClick={(e) => { e.preventDefault(); scrollToSection("beyond code"); }} className="manifest-nav-item" style={{ borderBottom: "none" }}>
+        <span>About / Identity</span>
+        <span className="manifest-arrow">→</span>
+      </a>
+    </div>
+  </aside>
+);
+
+export default function Home() {
+  useEffect(() => {}, []);
 
   return (
-    <div className="w-full text-white">
-      {/* Hero Section */}
-      <section id="home" className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto"
-        >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 sm:mb-8 leading-tight">
-            Lagani Patel
-          </h1>
-          <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl mt-4 sm:mt-6 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
-            <span className="text-gray-300">I build </span>
-            <span className="text-blue-400 font-bold text-center min-h-[1.5em] flex items-center justify-center">
-              {mounted ? (
-                <ReactTyped
-                  strings={[
-                    "intelligent systems.",
-                    "interactive applications.",
-                    "data-driven solutions.",
-                  ]}
-                  typeSpeed={50}
-                  backSpeed={30}
-                  loop
-                  className="min-h-[1.5em] flex items-center justify-center"
-                />
-              ) : (
-                <span className="min-h-[1.5em] flex items-center justify-center">intelligent systems.</span>
-              )}
-            </span>
-          </div>
-        </motion.div>
-      </section>
+    <div className="page-with-sidebar">
+      <div className="page-main bg-cream text-[#2a2a28]">
+      {/* Landing */}
+      <section id="home" className="min-h-screen relative bg-[#EBE5DD] landing-framed">
+        <div className="landing-grid-bg" aria-hidden="true" />
+        <div className="landing-app-container">
+          <div className="landing-main-stage">
+            <div className="landing-tech-mark tm-tl">NODE.082<br />DEPLOYMENT_A</div>
+            <div className="landing-tech-mark tm-tr">LATENCY.MS<br />12.04</div>
+            <div className="landing-tech-mark tm-bl">USER_ID: 0x99A<br />LOC: NC_CA</div>
+            <div className="landing-tech-mark tm-br">COMPUTE<br />DISTRIBUTED</div>
 
-      {/* Skills Section */}
-      <motion.section
-        id="skills"
-        className="min-h-screen flex flex-col items-center justify-start bg-[#0C2851] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 pt-0 sm:pt-2 lg:pt-4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.5, ease: "easeInOut" }}
-      >
-        <motion.h1 
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white text-center w-full max-w-7xl mb-4 sm:mb-6 lg:mb-8"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          Technical Skills
-        </motion.h1>
-        
-        <div className="w-full max-w-7xl">
-          {/* Skills Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            
-            {/* Machine Learning Skills */}
-            <motion.div
-              className="bg-[#11346A] rounded-xl p-6"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-            >
-              <h3 className="text-xl font-bold text-white mb-4">Machine Learning</h3>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">P</div>
-                  <div>
-                    <p className="text-white font-bold">PyTorch</p>
-                    <p className="text-gray-400 text-sm">Deep Learning Framework</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-yellow-500 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">😊</div>
-                  <div>
-                    <p className="text-white font-bold">Hugging Face</p>
-                    <p className="text-gray-400 text-sm">Transformer Library</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-orange-600 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">T</div>
-                  <div>
-                    <p className="text-white font-bold">TensorFlow</p>
-                    <p className="text-gray-400 text-sm">Deep Learning Framework</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">SK</div>
-                  <div>
-                    <p className="text-white font-bold">SKLearn</p>
-                    <p className="text-gray-400 text-sm">ML Toolkit</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Backend Skills */}
-            <motion.div
-              className="bg-[#11346A] rounded-xl p-6"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <h3 className="text-xl font-bold text-white mb-4">Backend</h3>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-green-500 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">node</div>
-                  <div>
-                    <p className="text-white font-bold">Node.js</p>
-                    <p className="text-gray-400 text-sm">JavaScript runtime</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-gray-600 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">E</div>
-                  <div>
-                    <p className="text-white font-bold">Express.js</p>
-                    <p className="text-gray-400 text-sm">JS Backend Framework</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-white rounded flex items-center justify-center text-black font-bold text-xs flex-shrink-0">F</div>
-                  <div>
-                    <p className="text-white font-bold">Flask</p>
-                    <p className="text-gray-400 text-sm">Backend Framework</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-green-600 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">DJ</div>
-                  <div>
-                    <p className="text-white font-bold">Django</p>
-                    <p className="text-gray-400 text-sm">Backend Framework</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Databases Skills */}
-            <motion.div
-              className="bg-[#11346A] rounded-xl p-6"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              <h3 className="text-xl font-bold text-white mb-4">Databases</h3>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-green-500 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">🍃</div>
-                  <div>
-                    <p className="text-white font-bold">MongoDB</p>
-                    <p className="text-gray-400 text-sm">NoSQL Database</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-pink-500 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">Q</div>
-                  <div>
-                    <p className="text-white font-bold">GraphQL</p>
-                    <p className="text-gray-400 text-sm">API Query Language</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">🐘</div>
-                  <div>
-                    <p className="text-white font-bold">PostgreSQL</p>
-                    <p className="text-gray-400 text-sm">Relational Database</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">M</div>
-                  <div>
-                    <p className="text-white font-bold">MySQL</p>
-                    <p className="text-gray-400 text-sm">Relational Database</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* DevOps Skills */}
-            <motion.div
-              className="bg-[#11346A] rounded-xl p-6"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <h3 className="text-xl font-bold text-white mb-4">DevOps</h3>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">🐳</div>
-                  <div>
-                    <p className="text-white font-bold">Docker</p>
-                    <p className="text-gray-400 text-sm">Container Creation</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">⚓</div>
-                  <div>
-                    <p className="text-white font-bold">Kubernetes</p>
-                    <p className="text-gray-400 text-sm">Container Orchestration</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-gray-400 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">☁</div>
-                  <div>
-                    <p className="text-white font-bold">AWS, Azure, GCP</p>
-                    <p className="text-gray-400 text-sm">Cloud Services</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Frontend Skills */}
-            <motion.div
-              className="bg-[#11346A] rounded-xl p-6"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            >
-              <h3 className="text-xl font-bold text-white mb-4">Frontend</h3>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">N</div>
-                  <div>
-                    <p className="text-white font-bold">Next.js</p>
-                    <p className="text-gray-400 text-sm">Rendering Framework</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">⚛</div>
-                  <div>
-                    <p className="text-white font-bold">React.js</p>
-                    <p className="text-gray-400 text-sm">Web UI Library</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-cyan-500 rounded flex items-center justify-center text-white font-bold text-sm flex-shrink-0">T</div>
-                  <div>
-                    <p className="text-white font-bold">Tailwind CSS</p>
-                    <p className="text-gray-400 text-sm">CSS Framework</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Mobile Skills */}
-            <motion.div
-              className="bg-[#11346A] rounded-xl p-6"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <h3 className="text-xl font-bold text-white mb-4">Mobile</h3>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-white rounded flex items-center justify-center text-black font-bold text-xs flex-shrink-0">RN</div>
-                  <div>
-                    <p className="text-white font-bold">React Native + Expo</p>
-                    <p className="text-gray-400 text-sm">Mobile Dev Framework</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">🐦</div>
-                  <div>
-                    <p className="text-white font-bold">Swift</p>
-                    <p className="text-gray-400 text-sm">iOS Development</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-green-500 rounded flex items-center justify-center text-white font-bold text-xs flex-shrink-0">C</div>
-                  <div>
-                    <p className="text-white font-bold">Jetpack Compose</p>
-                    <p className="text-gray-400 text-sm">Android Development</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Projects Section */}
-      <motion.section
-        id="projects"
-        className="min-h-screen flex flex-col items-center justify-start bg-[#173162] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 pt-8 sm:pt-10 lg:pt-12"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.5, ease: "easeInOut" }}
-      >
-        <motion.h1 
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white text-center mb-8 sm:mb-10 lg:mb-12"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          Projects
-        </motion.h1>
-
-        <div className="w-full max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            
-            {/* Project 1 - AI Image Compression */}
-            <motion.div
-              className="bg-[#1F4284] rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-            >
-              <h3 className="text-2xl font-bold text-white mb-3">AI-Driven Image Compression</h3>
-              <p className="text-gray-300 mb-4 leading-relaxed">
-                Trained and evaluated generative models (VQ-VAE, GANs, Diffusion) for domain-specific image compression, achieving a 15% improvement in SSIM and reducing perceptual loss by 20% over JPEG/WebP.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full">PyTorch</span>
-                <span className="px-3 py-1 bg-purple-500 text-white text-sm rounded-full">VQ-VAE</span>
-                <span className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">GANs</span>
-                <span className="px-3 py-1 bg-green-500 text-white text-sm rounded-full">Diffusion Models</span>
-              </div>
-            </motion.div>
-
-            {/* Project 2 - Interactive Digital Book */}
-            <motion.div
-              className="bg-[#1F4284] rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <h3 className="text-2xl font-bold text-white mb-3">Interactive Digital Book</h3>
-              <p className="text-gray-300 mb-4 leading-relaxed">
-                Designed and implemented an E-Textbook platform with normalized MySQL schemas, reducing data redundancy by 35% and supporting over 10,000 assessment records across user roles and course mappings.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">Python</span>
-                <span className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full">MySQL</span>
-                <span className="px-3 py-1 bg-green-500 text-white text-sm rounded-full">PostgreSQL</span>
-                <span className="px-3 py-1 bg-purple-500 text-white text-sm rounded-full">Database Design</span>
-              </div>
-            </motion.div>
-
-            {/* Project 3 - Antar iOS App */}
-            <motion.div
-              className="bg-[#1F4284] rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              <h3 className="text-2xl font-bold text-white mb-3">Antar iOS App</h3>
-              <p className="text-gray-300 mb-4 leading-relaxed">
-                iOS app for scheduling posts for Instagram. Features automated posting, content calendar management, and analytics tracking to optimize social media presence and engagement.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">Swift</span>
-                <span className="px-3 py-1 bg-purple-500 text-white text-sm rounded-full">iOS</span>
-                <span className="px-3 py-1 bg-pink-500 text-white text-sm rounded-full">Instagram API</span>
-                <span className="px-3 py-1 bg-green-500 text-white text-sm rounded-full">Social Media</span>
-              </div>
-              <a
-                href="https://github.com/Lagani21/Antar"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white/20"
+            <div className="relative z-10">
+              <motion.h1
+                className="landing-hero-title"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
               >
-                View on GitHub
-              </a>
-            </motion.div>
-
-            {/* Project 4 - Shanti AI Voice Agent */}
-            <motion.div
-              className="bg-[#1F4284] rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <h3 className="text-2xl font-bold text-white mb-3">Shanti AI Voice Agent</h3>
-              <p className="text-gray-300 mb-4 leading-relaxed">
-                Voice-first AI companion with session history, insights, and function calling. Built with Next.js, Prisma, and WebRTC, with real-time STT/TTS using OpenAI and Deepgram.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">Next.js</span>
-                <span className="px-3 py-1 bg-purple-500 text-white text-sm rounded-full">Prisma</span>
-                <span className="px-3 py-1 bg-green-500 text-white text-sm rounded-full">OpenAI</span>
-                <span className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full">Deepgram</span>
-              </div>
-              <a
-                href="https://github.com/Lagani21/shanti_ai_voice_agent"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white/20"
+                LAGANI<br />PATEL
+              </motion.h1>
+              <motion.p
+                className="landing-hero-tagline"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
               >
-                View on GitHub
-              </a>
-            </motion.div>
+                Building intelligent systems is my craft; analyzing films is my escape. Technically a Master of Science, but practically a student of everything else.
+              </motion.p>
+            </div>
 
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Experience Section - Timeline-Based */}
-      <motion.section
-        id="experience"
-        className="min-h-screen flex flex-col items-center justify-start text-black bg-[#4C638D] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 pt-20 sm:pt-24 lg:pt-28 overflow-visible"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.5, ease: "easeInOut" }}
-      >
-          <motion.h1 
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white text-center mb-8 sm:mb-10 lg:mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            Experience
-          </motion.h1>
-          
-          {/* Mobile Layout - Stacked Cards */}
-          <div className="w-full max-w-4xl space-y-6 sm:hidden">
-            {/* Data Scientist Card */}
-            <motion.div
-              className="w-full"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.5, ease: "easeInOut" }}
-            >
-              <div className="experience-card group bg-white text-black rounded-xl shadow-xl p-6 w-full h-auto min-h-[180px] flex flex-col justify-center hover:h-auto border border-gray-200 transform-gpu">
-                <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Data Scientist</h2>
-                  <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">2025</span>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-700 mb-3">NC Museum of Natural Sciences</h3>
-                <p className="text-gray-600 text-sm mb-4">Oct 2024 - July 2025</p>
-                <div className="details">
-                  <p className="text-gray-500 text-sm leading-relaxed">
-                    Developing AI-driven solutions to improve wildlife monitoring across the United States. By integrating AI into our workflow, we're reducing the need for manual processing and improving classification across large datasets. One of the key aspects of our work involves depth estimation models for calibrated data, processing over 100,000+ camera trap images from diverse ecosystems.
-
-                    Our system improves detection accuracy by 20-30% compared to traditional methods, allowing researchers to extract precise positional data from images captured across 50+ monitoring sites nationwide. Automating these processes has resulted in a 40% reduction in manual labor, ensuring more consistent and reliable wildlife monitoring while accelerating data-driven conservation efforts.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Machine Learning Engineer Card */}
-            <motion.div
-              className="w-full"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.5, ease: "easeInOut" }}
-            >
-              <div className="experience-card group bg-white text-black rounded-xl shadow-xl p-6 w-full h-auto min-h-[180px] flex flex-col justify-center hover:h-auto border border-gray-200 transform-gpu">
-                <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Machine Learning Engineer</h2>
-                  <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">2024</span>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-700 mb-3">Dept. of MAE, NC State University</h3>
-                <p className="text-gray-600 text-sm mb-4">Feb 2024 - August 2024</p>
-                <div className="details">
-                  <p className="text-gray-500 text-sm leading-relaxed">
-                    Developed machine learning models to predict thermal conductivity profiles with improved accuracy. Using MATLAB's API Engine with Python, I generated over 30,000 data points, reducing manual processing time by 50% and enhancing model efficiency.
-
-                    To optimize predictions, I implemented Regression algorithms and ensemble learning, improving accuracy by 25% and reducing computational time by 30%. These advancements made thermal modeling more scalable and precise, enabling faster and more reliable simulations.
-
-                    Beyond model development, I refined data processing workflows, accelerating simulation speed by 40% and ensuring a more automated and efficient approach to material behavior analysis.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Software Engineer Intern Card */}
-            <motion.div
-              className="w-full"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.5, ease: "easeInOut" }}
-            >
-              <div className="experience-card group bg-white text-black rounded-xl shadow-xl p-6 w-full h-auto min-h-[180px] flex flex-col justify-center hover:h-auto border border-gray-200 transform-gpu">
-                <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Software Engineering Intern</h2>
-                  <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">2023</span>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-700 mb-3">CaringHumans</h3>
-                <p className="text-gray-600 text-sm mb-4">Jan 2023 - May 2023</p>
-                <div className="details">
-                  <p className="text-gray-500 text-sm leading-relaxed">
-                    Worked on improving the platform frontend and integrating API-driven features. Implemented responsive design using HTML5, CSS3, and JavaScript frameworks and contributed to RESTful API development for real-time profile booking management.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Desktop Layout - 3 Cards Side by Side */}
-          <div className="hidden sm:block w-full max-w-7xl mt-12 lg:mt-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 xl:gap-10">
-              {/* Data Scientist Card */}
-              <motion.div
-                className="experience-item"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
-              >
-                <div className="experience-card group bg-white text-black rounded-xl shadow-xl p-6 h-[220px] lg:h-[240px] flex flex-col justify-center hover:shadow-2xl relative overflow-hidden border border-gray-200 transform-gpu">
-                  <div className="flex items-center justify-between mb-4">
-                    <h2 className="text-xl lg:text-2xl font-bold text-gray-800">Data Scientist</h2>
-                    <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">2025</span>
-                  </div>
-                  <h3 className="text-lg lg:text-xl font-semibold text-gray-700 mb-3">NC Museum of Natural Sciences</h3>
-                  <p className="text-gray-600 text-sm mb-4">Oct 2024 - July 2025</p>
-                  
-                  {/* Expandable Content */}
-                  <div className="details group-hover:mt-4">
-                    <p className="text-gray-500 text-sm leading-relaxed">
-                      Developing AI-driven solutions to improve wildlife monitoring across the United States. By integrating AI into our workflow, we're reducing the need for manual processing and improving classification across large datasets. One of the key aspects of our work involves depth estimation models for calibrated data, processing over 100,000+ camera trap images from diverse ecosystems.
-
-                      Our system improves detection accuracy by 20-30% compared to traditional methods, allowing researchers to extract precise positional data from images captured across 50+ monitoring sites nationwide. Automating these processes has resulted in a 40% reduction in manual labor, ensuring more consistent and reliable wildlife monitoring while accelerating data-driven conservation efforts.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Machine Learning Engineer Card */}
-              <motion.div
-                className="experience-item"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
-              >
-                <div className="experience-card group bg-white text-black rounded-xl shadow-xl p-6 h-[220px] lg:h-[240px] flex flex-col justify-center hover:shadow-2xl relative overflow-hidden border border-gray-200 transform-gpu">
-                  <div className="flex items-center justify-between mb-4">
-                    <h2 className="text-xl lg:text-2xl font-bold text-gray-800">Machine Learning Engineer</h2>
-                    <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">2024</span>
-                  </div>
-                  <h3 className="text-lg lg:text-xl font-semibold text-gray-700 mb-3">Dept. of MAE, NC State University</h3>
-                  <p className="text-gray-600 text-sm mb-4">Feb 2024 - August 2024</p>
-                  
-                  {/* Expandable Content */}
-                  <div className="details group-hover:mt-4">
-                    <p className="text-gray-500 text-sm leading-relaxed">
-                      Developed machine learning models to predict thermal conductivity profiles with improved accuracy. Using MATLAB's API Engine with Python, I generated over 30,000 data points, reducing manual processing time by 50% and enhancing model efficiency.
-
-                      To optimize predictions, I implemented Regression algorithms and ensemble learning, improving accuracy by 25% and reducing computational time by 30%. These advancements made thermal modeling more scalable and precise, enabling faster and more reliable simulations.
-
-                      Beyond model development, I refined data processing workflows, accelerating simulation speed by 40% and ensuring a more automated and efficient approach to material behavior analysis.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Software Engineer Intern Card */}
-              <motion.div
-                className="experience-item"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
-              >
-                <div className="experience-card group bg-white text-black rounded-xl shadow-xl p-6 h-[220px] lg:h-[240px] flex flex-col justify-center hover:shadow-2xl relative overflow-hidden border border-gray-200 transform-gpu">
-                  <div className="flex items-center justify-between mb-4">
-                    <h2 className="text-xl lg:text-2xl font-bold text-gray-800">Software Engineering Intern</h2>
-                    <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">2023</span>
-                  </div>
-                  <h3 className="text-lg lg:text-xl font-semibold text-gray-700 mb-3">CaringHumans</h3>
-                  <p className="text-gray-600 text-sm mb-4">Jan 2023 - May 2023</p>
-                  
-                  {/* Expandable Content */}
-                  <div className="details group-hover:mt-4">
-                    <p className="text-gray-500 text-sm leading-relaxed">
-                      Worked on improving the platform frontend and integrating API-driven features. Implemented responsive design using HTML5, CSS3, and JavaScript frameworks and contributed to RESTful API development for real-time profile booking management.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
+            <div className="landing-neural-viz">
+              <svg width="100%" height="100%" viewBox="0 0 600 600" className="w-full h-full">
+                <g className="links">
+                  <line x1="100" y1="200" x2="300" y2="100" className="link" />
+                  <line x1="100" y1="300" x2="300" y2="100" className="active-link" />
+                  <line x1="100" y1="400" x2="300" y2="100" className="link" />
+                  <line x1="100" y1="200" x2="300" y2="300" className="link" />
+                  <line x1="100" y1="300" x2="300" y2="300" className="active-link" />
+                  <line x1="100" y1="400" x2="300" y2="300" className="link" />
+                  <line x1="300" y1="100" x2="500" y2="300" className="active-link" />
+                  <line x1="300" y1="300" x2="500" y2="300" className="active-link" />
+                  <line x1="100" y1="300" x2="500" y2="300" className="link" strokeDasharray="4 4" />
+                </g>
+                <g className="nodes">
+                  <rect x="95" y="195" width="10" height="10" className="node" />
+                  <rect x="95" y="295" width="10" height="10" className="node" fill="var(--landing-accent)" />
+                  <rect x="95" y="395" width="10" height="10" className="node" />
+                  <rect x="295" y="95" width="10" height="10" className="node" />
+                  <rect x="295" y="295" width="10" height="10" className="node" />
+                  <rect x="495" y="295" width="10" height="10" className="node" fill="var(--landing-accent)" />
+                </g>
+                <circle cx="300" cy="300" r="250" fill="none" stroke="var(--landing-grid-strong)" strokeWidth="0.5" strokeDasharray="10 10" />
+                <text x="115" y="305" fontSize="8" fill="var(--landing-fg)" opacity="0.7">INPUT_LAYER_01</text>
+                <text x="315" y="305" fontSize="8" fill="var(--landing-fg)" opacity="0.7">HIDDEN_OPTIM_02</text>
+                <text x="515" y="305" fontSize="8" fill="var(--landing-fg)" opacity="0.7">OUTPUT_PROB</text>
+              </svg>
             </div>
           </div>
-        </motion.section>
+        </div>
+        <div className="landing-vert-text-wrap" aria-hidden="true">
+          <span className="landing-vert-bar" />
+          <span className="landing-vert-text">AI_SOFTWARE_ENGINEER // કાર્યસંગ્રહ // LAGANI_PATEL</span>
+        </div>
+      </section>
 
-      {/* Education Section */}
-      <motion.section 
-        id="education" 
-        className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-[#8194B8] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-12 sm:py-16 lg:py-20"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.2 }}
-      >
-        <div className="relative group md:mr-8 lg:mr-12 mb-8 md:mb-0 order-2 md:order-1">
-          <Image
-            src="/education_test.jpg"
-            alt="North Carolina State University Campus"
-            width={400}
-            height={300}
-            className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[450px] rounded-xl shadow-2xl transition duration-300 group-hover:opacity-90"
-            priority
-          />
-        </div>
-        <div className="w-full md:w-1/2 text-center md:text-left md:pl-6 lg:pl-8 xl:pl-12 order-1 md:order-2">
-          <motion.h1 
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-black font-extrabold mb-6 sm:mb-8 lg:mb-10 leading-tight"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            Education
-          </motion.h1>
-          <motion.p 
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-black leading-relaxed"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            I'm pursuing a Master of Computer Science at North Carolina State University, where I've been diving deep into Data Analytics, Data Science, Machine Learning, and Software Engineering. My undergraduate studies at Pandit Deendayal Energy University in Information and Communication Technology Engineering laid a strong foundation in Data Structures, Database Management Systems, and Internet of Things.
-          </motion.p>
-        </div>
-      </motion.section>
+    {/* Experience — PROFESSIONAL TRAJECTORY */}
+    <section id="experience" className="min-h-screen relative bg-[#EBE5DD] px-6 sm:px-10 md:px-16 lg:px-20 py-12 sm:py-16">
+      <div className="landing-grid-bg" aria-hidden="true" />
+      <div className="relative z-10 max-w-4xl">
+        <div className="landing-tech-mark section-tech-mark tm-tl">LOG.EXP v4<br />SEQUENTIAL_CHRONO</div>
 
-      {/* Beyond Code Section */}
-      <motion.section
-        id="beyond code"
-        className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-[#E7EFFF] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-12 sm:py-16 lg:py-20"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.2 }}
-      >
-        <div className="w-full md:w-1/2 text-center md:text-right mb-8 md:mb-0 order-2 md:order-1">
-          <motion.h1 
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-black mb-6 sm:mb-8 lg:mb-10 leading-tight"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            Beyond Code
-          </motion.h1>
-          <motion.div 
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-black space-y-4 sm:space-y-6 lg:space-y-8"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <p className="leading-relaxed">
-              I'm 23, and while coding keeps me busy, I try to keep life balanced with passions that go beyond the screen.
-            </p>
-            <p className="leading-relaxed">
-              At my university's Student Union, I've worked as a part-time event manager, running 100+ events where I got to juggle logistics, AV tech, and the kind of problem-solving that doesn't come with a manual.
-            </p>
-            <p className="leading-relaxed">
-              Outside of work, I enjoy photography and filmmaking (currently obsessed with Mike Flanagan's storytelling style). I also love cooking, experimenting with vegetarian recipes, and reading poetry when I need to slow down.
-            </p>
-          </motion.div>
-        </div>
+        <h2 className="section-hero-title">PROFESSIONAL TRAJECTORY</h2>
 
-        {/* Image Section */}
-        <div className="w-full md:w-1/2 flex justify-center order-1 md:order-2">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <Image
-              src="/test_image.jpg"
-              alt="Lagani Patel - Personal Photo"
-              width={400}
-              height={400}
-              className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[450px] rounded-xl shadow-2xl transition duration-300"
-              priority
-            />
-          </motion.div>
+        {[
+          { date: "JAN 2026 – PRESENT", role: "AI SOFTWARE ENGINEER", org: "FINOPTIMA SOLUTIONS", desc: "End-to-end AI system architecture and deployment. Developing scalable machine learning pipelines for financial optimization, implementing MLOps workflows, and building production-ready AI applications with focus on real-time inference and model monitoring." },
+          { date: "OCT 2024 – JULY 2025", role: "DATA SCIENTIST", org: "NC MUSEUM OF NATURAL SCIENCES", desc: "AI-driven wildlife monitoring solutions. Depth estimation algorithms for 100K+ camera trap images achieving 30% accuracy improvement and 40% reduction in manual processing across 50+ research sites." },
+          { date: "FEB 2024 – AUG 2024", role: "ML ENGINEER", org: "NC STATE UNIVERSITY // MAE DEPT", desc: "Thermal conductivity prediction models using MATLAB/Python. Processed 30K+ data points with ensemble learning methods delivering 25% accuracy boost and 40% faster simulation workflows." },
+          { date: "JAN 2023 – MAY 2023", role: "SOFTWARE ENGINEER INTERN", org: "CARINGHUMANS", desc: "Full-stack development with responsive UI/UX design. Built RESTful APIs for real-time profile booking system using HTML5, CSS3, JavaScript with seamless user experience." },
+        ].map((job) => (
+          <div key={job.role} className="trajectory-entry">
+            <div className="trajectory-content">
+              <h3 className="trajectory-role">{job.role}</h3>
+              <div className="trajectory-org">{job.org}</div>
+              <p className="trajectory-desc">{job.desc}</p>
+            </div>
+            <div className="trajectory-date">{job.date}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+      {/* Skills — TECHNICAL COMPETENCIES */}
+      <section id="skills" className="min-h-screen relative bg-[#EBE5DD] px-6 sm:px-10 md:px-16 lg:px-20 py-12 sm:py-16">
+        <div className="landing-grid-bg" aria-hidden="true" />
+        <div className="relative z-10 max-w-6xl">
+          <div className="landing-tech-mark section-tech-mark tm-tl">LOG.SKILLS v2<br />COMPETENCY_MATRIX</div>
+
+          <h2 className="section-hero-title">TECHNICAL COMPETENCIES</h2>
+
+          <div className="skills-grid">
+            {[
+              { 
+                title: "Machine Learning", 
+                items: ["PyTorch", "Hugging Face", "TensorFlow", "SKLearn", "OpenCV", "Pandas", "NumPy"] 
+              },
+              { 
+                title: "Backend", 
+                items: ["Node.js", "Express.js", "Flask", "Django", "FastAPI", "GraphQL"] 
+              },
+              { 
+                title: "Databases", 
+                items: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Elasticsearch"] 
+              },
+              { 
+                title: "DevOps & Cloud", 
+                items: ["Docker", "Kubernetes", "AWS", "Azure", "GCP", "Terraform"] 
+              },
+              { 
+                title: "Frontend", 
+                items: ["Next.js", "React.js", "Tailwind CSS", "TypeScript", "JavaScript"] 
+              },
+              { 
+                title: "Mobile", 
+                items: ["React Native", "Expo", "Swift", "Jetpack Compose"] 
+              }
+            ].map((category, i) => (
+              <div key={category.title} className="skills-category-simple">
+                <h3 className="skills-category-title-simple">{category.title}</h3>
+                <ul className="skills-list-simple">
+                  {category.items.map((skill) => (
+                    <li key={skill} className="skill-item-simple">{skill}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
-      </motion.section>
+      </section>
+
+      {/* Projects — DEVELOPMENT PORTFOLIO */}
+      <section id="projects" className="min-h-screen relative bg-[#EBE5DD] px-6 sm:px-10 md:px-16 lg:px-20 py-12 sm:py-16">
+        <div className="landing-grid-bg" aria-hidden="true" />
+        <div className="relative z-10 max-w-4xl">
+          <div className="landing-tech-mark section-tech-mark tm-tl">LOG.PROJ v3<br />SEQUENTIAL_BUILD</div>
+
+          <h2 className="section-hero-title">DEVELOPMENT PORTFOLIO</h2>
+
+          {[
+            { 
+              title: "FINOPTIMA AI TRADING PLATFORM", 
+              period: "2026", 
+              stack: "PYTHON // PYTORCH // KAFKA // KUBERNETES",
+              desc: "Real-time algorithmic trading platform with ML-driven market prediction models. Built scalable microservices architecture processing 100K+ transactions/second with sub-millisecond latency.",
+              github: null
+            },
+            { 
+              title: "AI-DRIVEN IMAGE COMPRESSION", 
+              period: "2024", 
+              stack: "PYTORCH // VQ-VAE // GANS // DIFFUSION",
+              desc: "Generative models for image compression achieving 15% SSIM improvement and 20% perceptual loss reduction over JPEG/WebP standards.",
+              github: null
+            },
+            { 
+              title: "SHANTI AI VOICE AGENT", 
+              period: "2024", 
+              stack: "NEXTJS // PRISMA // OPENAI // WEBRTC",
+              desc: "Voice-first AI companion with session memory and function calling. Real-time audio processing with OpenAI integration and persistent conversation context.",
+              github: "https://github.com/Lagani21/shanti_ai_voice_agent"
+            },
+            { 
+              title: "ANTAR iOS SCHEDULING APP", 
+              period: "2023", 
+              stack: "SWIFT // IOS // INSTAGRAM_API",
+              desc: "Native iOS app for automated social media scheduling. Content calendar management with analytics dashboard and Instagram API integration.",
+              github: "https://github.com/Lagani21/Antar"
+            },
+          ].map((project) => (
+            <div key={project.title} className="trajectory-entry">
+              <div className="trajectory-content">
+                <h3 className="trajectory-role">{project.title}</h3>
+                <div className="trajectory-org">
+                  {project.stack}
+                  {project.github && (
+                    <a 
+                      href={project.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="ml-4 text-[var(--landing-accent)] text-sm font-medium hover:underline"
+                    >
+                      GITHUB →
+                    </a>
+                  )}
+                </div>
+                <p className="trajectory-desc">{project.desc}</p>
+              </div>
+              <div className="trajectory-date">{project.period}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Education — ACADEMIC BACKGROUND */}
+      <section id="education" className="min-h-screen relative bg-[#EBE5DD] px-6 sm:px-10 md:px-16 lg:px-20 py-12 sm:py-16">
+        <div className="landing-grid-bg" aria-hidden="true" />
+        <div className="relative z-10 max-w-4xl">
+          <div className="landing-tech-mark section-tech-mark tm-tl">LOG.EDU v2<br />ACADEMIC_HISTORY</div>
+
+          <h2 className="section-hero-title">ACADEMIC BACKGROUND</h2>
+
+          <div className="academic-section">
+            <div className="academic-entry">
+              <div className="academic-header">
+                <h3 className="academic-degree">MASTER OF COMPUTER SCIENCE</h3>
+                <span className="academic-period">AUG 2023 — MAY 2025</span>
+              </div>
+              <div className="academic-institution">NORTH CAROLINA STATE UNIVERSITY, RALEIGH, NORTH CAROLINA</div>
+              <div className="academic-details">
+                <div className="academic-detail-item">Specialization in Data Science</div>
+                <div className="academic-detail-item">Coursework: Software Engineering, Object-Oriented Programming, Cloud Computing and Statistics</div>
+              </div>
+            </div>
+
+            <div className="academic-entry">
+              <div className="academic-header">
+                <h3 className="academic-degree">BACHELOR OF TECHNOLOGY</h3>
+                <span className="academic-period">AUG 2019 — MAY 2023</span>
+              </div>
+              <div className="academic-institution">PANDIT DEENDAYAL ENERGY UNIVERSITY, GANDHINAGAR, INDIA</div>
+              <div className="academic-details">
+                <div className="academic-detail-item">Information and Communication Technology Engineering</div>
+                <div className="academic-detail-item">Coursework: Data Structures & Algorithms, Operating Systems and Database Management Systems</div>
+              </div>
+            </div>
+
+            {/* <div className="academic-entry">
+              <div className="academic-header">
+                <h3 className="academic-degree">CERTIFICATIONS</h3>
+                <span className="academic-period">2023 — 2026</span>
+              </div>
+              <div className="academic-details">
+                <div className="academic-detail-item">AWS Solutions Architect Professional, Kubernetes Application Developer (CKAD), Google Cloud ML Engineer</div>
+              </div>
+            </div> */}
+          </div>
+        </div>
+      </section>
+
+      {/* Beyond Code — SYSTEM IDENTITY */}
+      <section id="beyond code" className="min-h-screen relative bg-[#EBE5DD] px-6 sm:px-10 md:px-16 lg:px-20 py-12 sm:py-16">
+        <div className="landing-grid-bg" aria-hidden="true" />
+        <div className="relative z-10 max-w-5xl">
+          <div className="landing-tech-mark section-tech-mark tm-tl">USER.BIO v4<br />IDENT_RECORDS</div>
+
+          <h2 className="section-hero-title">SYSTEM IDENTITY</h2>
+
+          <div className="identity-layout">
+            <div className="identity-image-section">
+              <div className="identity-image-container">
+                <Image
+                  src="/test_image.jpg"
+                  alt="Lagani Patel"
+                  width={300}
+                  height={400}
+                  className="identity-image"
+                  priority
+                />
+                <div className="identity-sub-id">SUB_ID: LAGANI_V_001</div>
+              </div>
+            </div>
+
+            <div className="identity-content-section">
+              <div className="identity-philosophy-quote">
+                <div className="quote-content">
+                  "The powerful play goes on, and you may contribute a verse."<br />
+                  — Walt Whitman
+                </div>
+              </div>
+
+              <div className="identity-bio">
+                <p>
+                  I'm 23. I write code, but I also try to live a life that requires no compiling.
+                </p>
+                <p>
+                  I've cut my teeth as an event manager, running 100+ events where I juggled logistics, AV tech, and high-pressure problem-solving. It taught me to think on my feet in ways a computer never could.
+                </p>
+                <p>
+                  My downtime is usually spent behind a lens or in front of a movie screen. I also enjoy cooking and reading poetry. (Note: I only read poetry. My code might be poetic, but my actual poems are a syntax error waiting to happen.)
+                </p>
+              </div>
+
+              <div className="identity-divider"></div>
+
+              <div className="identity-core-philosophy">
+                <div className="philosophy-divider"></div>
+                <span className="identity-label">CORE PHILOSOPHY</span>
+                <div className="philosophy-content">
+                  Guided by intention. Grounded in simplicity.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      </div>
+      <ManifestSidebar />
     </div>
   );
 }

@@ -55,8 +55,6 @@ export default function Navbar() {
       });
 
       setActiveSection(currentSection);
-      // Debug: log the current section for troubleshooting
-      console.log('Current section:', currentSection);
     };
 
     // Call handleScroll immediately to detect initial section
@@ -68,34 +66,13 @@ export default function Navbar() {
 
   if (!hasMounted) return null;
 
-  // Background color based on active section
-  const getNavbarColor = () => {
-    switch (activeSection) {
-      case "skills":
-        return "bg-[#0C2851]";
-      case "projects":
-        return "bg-[#173162]";
-      case "experience":
-        return "bg-[#4C638D]";
-      case "education":
-        return "bg-[#8194B8]";
-      case "beyond code":
-        return "bg-[#E7EFFF]";
-      default:
-        return "bg-[#001F3F]";
-    }
+  const getNavbarStyle = () => {
+    const base = "bg-cream/95 backdrop-blur-sm border-b border-[#388BC5]/10";
+    const text = "text-[#2a2a28]";
+    const active = "text-[#388BC5] font-medium";
+    return { base, text, active };
   };
-
-  // Text color based on active section
-  const getNavbarTextColor = () => {
-    switch (activeSection) {
-      case "education":
-      case "beyond code":
-        return "text-black";
-      default:
-        return "text-white";
-    }
-  };
+  const navStyle = getNavbarStyle();
 
   const handleNavClick = (section) => {
     const target = document.getElementById(section);
@@ -110,8 +87,8 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full h-16 sm:h-20 p-3 sm:p-4 flex items-center justify-between z-50 transition-all duration-500 ${getNavbarColor()} ${getNavbarTextColor()} shadow-lg`}
-      style={{ margin: 0, borderBottom: "none" }}
+      className={`fixed top-0 left-0 w-full h-14 sm:h-16 p-3 sm:p-4 flex items-center justify-between z-50 transition-all duration-300 ${navStyle.base} ${navStyle.text}`}
+      style={{ margin: 0 }}
     >
       {/* Left spacer */}
       <div className="flex-1" />
@@ -129,8 +106,8 @@ export default function Navbar() {
           <button
             key={section}
             onClick={() => handleNavClick(section)}
-            className={`px-3 md:px-4 lg:px-5 py-2 text-sm md:text-base lg:text-lg transition-all duration-300 rounded-lg ${
-              activeSection === section ? "font-bold scale-105" : "hover:scale-105"
+            className={`px-3 md:px-4 py-2 text-sm transition-colors duration-200 rounded ${
+              activeSection === section ? navStyle.active : "hover:text-[#388BC5]"
             }`}
           >
             {section
@@ -144,7 +121,7 @@ export default function Navbar() {
       <div className="sm:hidden">
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`p-2 rounded-lg transition-all duration-300 ${getNavbarTextColor()}`}
+          className="p-2 rounded transition-colors duration-200 hover:text-[#388BC5]"
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         >
           {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -153,66 +130,33 @@ export default function Navbar() {
 
       {/* Right icons */}
       <div className="flex space-x-3 md:space-x-4 lg:space-x-5 flex-1 justify-end pr-2 md:pr-4">
-        <a
-          href="https://github.com/Lagani21"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`p-2 rounded-lg transition-all duration-300 ${getNavbarTextColor()}`}
-          aria-label="GitHub"
-        >
-          <FaGithubSquare size={20} className="md:w-6 md:h-6" />
+        <a href="https://github.com/Lagani21" target="_blank" rel="noopener noreferrer" className="p-2 rounded transition-colors duration-200 hover:text-[#388BC5]" aria-label="GitHub">
+          <FaGithubSquare size={20} className="md:w-5 md:h-5" />
         </a>
-        <a
-          href="https://www.linkedin.com/in/laganipatel/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`p-2 rounded-lg transition-all duration-300 ${getNavbarTextColor()}`}
-          aria-label="LinkedIn"
-        >
-          <FaLinkedin size={20} className="md:w-6 md:h-6" />
+        <a href="https://www.linkedin.com/in/laganipatel/" target="_blank" rel="noopener noreferrer" className="p-2 rounded transition-colors duration-200 hover:text-[#388BC5]" aria-label="LinkedIn">
+          <FaLinkedin size={20} className="md:w-5 md:h-5" />
         </a>
-        <a
-          href="mailto:laganipatel@gmail.com"
-          className={`p-2 rounded-lg transition-all duration-300 ${getNavbarTextColor()}`}
-          aria-label="Email"
-        >
-          <FaEnvelope size={20} className="md:w-6 md:h-6" />
+        <a href="mailto:laganipatel@gmail.com" className="p-2 rounded transition-colors duration-200 hover:text-[#388BC5]" aria-label="Email">
+          <FaEnvelope size={20} className="md:w-5 md:h-5" />
         </a>
-        <a
-          href="https://drive.google.com/file/d/1F75wAafrMNYgek_e34r7SMgc0kCysbdT/view?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`p-2 rounded-lg transition-all duration-300 ${getNavbarTextColor()}`}
-          aria-label="Resume"
-        >
-          <FaFileAlt size={20} className="md:w-6 md:h-6" />
+        <a href="https://drive.google.com/file/d/1F75wAafrMNYgek_e34r7SMgc0kCysbdT/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="p-2 rounded transition-colors duration-200 hover:text-[#388BC5]" aria-label="Resume">
+          <FaFileAlt size={20} className="md:w-5 md:h-5" />
         </a>
       </div>
 
       {/* Mobile menu overlay */}
       {isMobileMenuOpen && (
-        <div className="absolute top-16 sm:top-20 left-0 w-full bg-[#001F3F]/95 backdrop-blur-sm shadow-2xl sm:hidden border-t border-white/20">
-          <div className="flex flex-col space-y-2 p-4">
-            {[
-              "home",
-              "skills",
-              "projects",
-              "experience",
-              "education",
-              "beyond code",
-            ].map((section) => (
+        <div className="absolute top-14 sm:top-16 left-0 w-full bg-cream/98 backdrop-blur-sm border-b border-[#388BC5]/10 sm:hidden">
+          <div className="flex flex-col p-4 gap-1">
+            {["home", "skills", "projects", "experience", "education", "beyond code"].map((section) => (
               <button
                 key={section}
                 onClick={() => handleNavClick(section)}
-                className={`text-left px-4 py-3 text-white transition-all duration-300 rounded-lg ${
-                  activeSection === section 
-                    ? "font-bold text-blue-300" 
-                    : "hover:bg-white/10 hover:text-blue-200"
+                className={`text-left px-4 py-3 text-sm rounded transition-colors duration-200 ${
+                  activeSection === section ? "font-medium text-[#388BC5]" : "text-[#2a2a28] hover:bg-[#388BC5]/10"
                 }`}
               >
-                {section
-                  .replace(/-/g, " ")
-                  .replace(/^\w/, (c) => c.toUpperCase())}
+                {section.replace(/-/g, " ").replace(/^\w/, (c) => c.toUpperCase())}
               </button>
             ))}
           </div>

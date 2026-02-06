@@ -4,7 +4,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        navy: "#001F3F", // ✅ Define navy blue
+        cream: "#E4E2D6",
+        coral: "#CF4E26",
+        accent: "#388BC5",
       },
     },
   },
