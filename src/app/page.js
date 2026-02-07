@@ -243,58 +243,118 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects — DEVELOPMENT PORTFOLIO */}
+      {/* Projects — TECHNICAL PROJECTS */}
       <section id="projects" className="min-h-screen relative bg-[#EBE5DD] px-6 sm:px-10 md:px-16 lg:px-20 py-12 sm:py-16">
         <div className="landing-grid-bg" aria-hidden="true" />
-        <div className="relative z-10 max-w-4xl">
-          <div className="landing-tech-mark section-tech-mark tm-tl">LOG.PROJ v3<br />SEQUENTIAL_BUILD</div>
+        <div className="relative z-10 max-w-7xl">
+          <div className="landing-tech-mark section-tech-mark tm-tl">LOG.PRJ_v4<br />TECHNICAL_ASSETS</div>
+          <div className="landing-tech-mark section-tech-mark tm-tr">INDEX.03<br />DEPLOYMENTS</div>
 
-          <h2 className="section-hero-title">DEVELOPMENT PORTFOLIO</h2>
+          <h2 className="section-hero-title">TECHNICAL PROJECTS</h2>
 
-          {[
-            { 
-              title: "AI-DRIVEN IMAGE COMPRESSION", 
-              period: "2024", 
-              stack: "PYTORCH // VQ-VAE // GANS // DIFFUSION",
-              desc: "Generative models for image compression achieving 15% SSIM improvement and 20% perceptual loss reduction over JPEG/WebP standards.",
-              github: null
-            },
-            { 
-              title: "SHANTI AI VOICE AGENT", 
-              period: "2024", 
-              stack: "NEXTJS // PRISMA // OPENAI // WEBRTC",
-              desc: "Voice-first AI companion with session memory and function calling. Real-time audio processing with OpenAI integration and persistent conversation context.",
-              github: "https://github.com/Lagani21/shanti_ai_voice_agent"
-            },
-            { 
-              title: "ANTAR iOS SCHEDULING APP", 
-              period: "2023", 
-              stack: "SWIFT // IOS // INSTAGRAM_API",
-              desc: "Native iOS app for automated social media scheduling. Content calendar management with analytics dashboard and Instagram API integration.",
-              github: "https://github.com/Lagani21/Antar"
-            },
-          ].map((project) => (
-            <div key={project.title} className="trajectory-entry">
-              <div className="trajectory-content">
-                <h3 className="trajectory-role">{project.title}</h3>
-                <div className="trajectory-org">
-                  {project.stack}
-                  {project.github && (
+          <div className="projects-grid">
+            {[
+              { 
+                id: "PRJ-001",
+                category: "AI",
+                title: "SHANTI AI VOICE AGENT", 
+                year: "2024",
+                desc: "Voice-first AI companion with real-time audio processing, session memory, and emotional state tracking.",
+                tags: ["NEXTJS", "TYPESCRIPT", "OPENAI", "WEBRTC"],
+                github: "https://github.com/Lagani21/shanti_ai_voice_agent",
+                status: "Live Demo"
+              },
+              { 
+                id: "PRJ-002",
+                category: "HEALTHCARE",
+                title: "DENTAL CLINIC MANAGEMENT", 
+                year: "2023",
+                desc: "Full-stack healthcare system with appointment scheduling, patient records, and billing integration.",
+                tags: ["PYTHON", "DJANGO", "REACT", "POSTGRESQL"],
+                github: "https://github.com/Lagani21/Dental_Clinic_Management_System",
+                status: "Enterprise Grade"
+              },
+              { 
+                id: "PRJ-003",
+                category: "MOBILE",
+                title: "ANTAR INSTAGRAM MANAGER", 
+                year: "2024",
+                desc: "iOS Instagram management app with OAuth, multi-account support, and analytics dashboard.",
+                tags: ["SWIFT", "SWIFTUI", "OAUTH", "INSTAGRAM_API"],
+                github: "https://github.com/Lagani21/Antar",
+                status: "Production Ready"
+              },
+              { 
+                id: "PRJ-004",
+                category: "DEVOPS",
+                title: "TAPASO PR VERIFIER", 
+                year: "2024",
+                desc: "Automated PR verification using Daytona sandboxes and CodeRabbit AI code reviews.",
+                tags: ["PYTHON", "NODEJS", "DAYTONA", "GITHUB_API"],
+                github: "https://github.com/Lagani21/tapaso",
+                status: "Open Source"
+              },
+              { 
+                id: "PRJ-005",
+                category: "VISION",
+                title: "AI IMAGE COMPRESSION", 
+                year: "2024",
+                desc: "Neural compression with generative models achieving 15% SSIM improvement over JPEG/WebP.",
+                tags: ["PYTORCH", "VQ-VAE", "GANS", "DIFFUSION"],
+                github: null,
+                status: "Research Phase"
+              },
+              { 
+                id: "PRJ-006",
+                category: "MEDIA",
+                title: "INTERACTIVE DIGITAL BOOK", 
+                year: "2023",
+                desc: "Immersive reading platform with adaptive storytelling and dynamic narrative branching.",
+                tags: ["REACT", "WEBGL", "GSAP", "FIREBASE"],
+                github: null,
+                status: "Beta Testing"
+              }
+            ].map((project) => (
+              <div key={project.id} className="project-card">
+                <div className="project-header">
+                  <div className="project-meta">
+                    <span className="project-id">{project.id}</span>
+                    <span className="project-separator">/</span>
+                    <span className="project-category">{project.category}</span>
+                  </div>
+                  <span className="project-year">{project.year}</span>
+                </div>
+                
+                <h3 className="project-title">{project.title}</h3>
+                
+                <p className="project-desc">{project.desc}</p>
+                
+                <div className="project-tags">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="project-tag">{tag}</span>
+                  ))}
+                </div>
+                
+                <div className="project-footer">
+                  {project.github ? (
                     <a 
                       href={project.github} 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="ml-4 text-[var(--landing-accent)] text-sm font-medium hover:underline"
+                      className="project-github"
                     >
-                      GITHUB →
+                      GITHUB // SRC_VIEW →
                     </a>
+                  ) : (
+                    <span className="project-github-disabled">
+                      PRIVATE // INTERNAL →
+                    </span>
                   )}
+                  <span className="project-status">{project.status}</span>
                 </div>
-                <p className="trajectory-desc">{project.desc}</p>
               </div>
-              <div className="trajectory-date">{project.period}</div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 

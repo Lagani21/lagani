@@ -894,6 +894,148 @@ section {
   line-height: 1.4;
 }
 
+/* Projects Grid Layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+@media (max-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.project-card {
+  background: var(--landing-bg);
+  border: 1px solid var(--landing-fg);
+  padding: 1.25rem;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.project-card:hover {
+  border-color: var(--landing-accent);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.project-id {
+  color: var(--landing-accent);
+}
+
+.project-separator {
+  color: var(--landing-fg);
+}
+
+.project-category {
+  color: var(--landing-fg);
+}
+
+.project-year {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--landing-accent);
+  font-weight: 600;
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  font-weight: 700;
+  color: var(--landing-fg);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.project-desc {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--landing-fg);
+  line-height: 1.3;
+  margin-bottom: 1.25rem;
+  opacity: 0.9;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.project-tag {
+  background: var(--landing-fg);
+  color: var(--landing-bg);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.project-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-github {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--landing-fg);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.project-github:hover {
+  color: var(--landing-accent);
+}
+
+.project-github-disabled {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--landing-fg);
+  opacity: 0.5;
+  font-weight: 500;
+}
+
+.project-status {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--landing-accent);
+  font-weight: 500;
+  font-style: italic;
+}
+
 /* Experience cards – simple, smooth */
 .experience-card {
   transition: box-shadow 0.4s ease, border-color 0.4s ease;
