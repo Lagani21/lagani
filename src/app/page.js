@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { HiDocumentText, HiHome, HiBriefcase, HiCog8Tooth, HiRocketLaunch, HiAcademicCap, HiUser, HiEnvelope } from "react-icons/hi2";
+import { HiDocumentText, HiEnvelope } from "react-icons/hi2";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 function scrollToSection(id) {
@@ -22,79 +22,44 @@ const ManifestSidebar = () => (
     <div className="manifest-group">
       <label className="manifest-label"><span className="pill">01</span> DIRECTORY / સૂચિ</label>
       <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection("home"); }} className="manifest-nav-item">
-        <span className="nav-item-content">
-          <HiHome className="nav-icon" />
-          Home
-        </span>
+        <span>Home</span>
         <span className="manifest-arrow">→</span>
       </a>
       <a href="#experience" onClick={(e) => { e.preventDefault(); scrollToSection("experience"); }} className="manifest-nav-item">
-        <span className="nav-item-content">
-          <HiBriefcase className="nav-icon" />
-          Experience
-        </span>
+        <span>Experience</span>
         <span className="manifest-arrow">→</span>
       </a>
       <a href="#skills" onClick={(e) => { e.preventDefault(); scrollToSection("skills"); }} className="manifest-nav-item">
-        <span className="nav-item-content">
-          <HiCog8Tooth className="nav-icon" />
-          Skills
-        </span>
+        <span>Skills</span>
         <span className="manifest-arrow">→</span>
       </a>
       <a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection("projects"); }} className="manifest-nav-item">
-        <span className="nav-item-content">
-          <HiRocketLaunch className="nav-icon" />
-          Projects
-        </span>
+        <span>Projects</span>
         <span className="manifest-arrow">→</span>
       </a>
       <a href="#education" onClick={(e) => { e.preventDefault(); scrollToSection("education"); }} className="manifest-nav-item">
-        <span className="nav-item-content">
-          <HiAcademicCap className="nav-icon" />
-          Education
-        </span>
+        <span>Education</span>
         <span className="manifest-arrow">→</span>
       </a>
-      <a href="#beyond code" onClick={(e) => { e.preventDefault(); scrollToSection("beyond code"); }} className="manifest-nav-item">
-        <span className="nav-item-content">
-          <HiUser className="nav-icon" />
-          Context
-        </span>
+      <a href="#beyond code" onClick={(e) => { e.preventDefault(); scrollToSection("beyond code"); }} className="manifest-nav-item" style={{ borderBottom: "none" }}>
+        <span>Context</span>
         <span className="manifest-arrow">→</span>
       </a>
-    </div>
-    
-    <div className="manifest-group">
-      <label className="manifest-label"><span className="pill">02</span> LINKS / કડીઓ</label>
-      <a href="https://drive.google.com/file/d/1UvlLGgf7YlqPIgXCSGEQmrS1b-A6R1Z5/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="manifest-nav-item">
-        <span className="nav-item-content">
-          <HiDocumentText className="nav-icon" />
-          Resume
-        </span>
-        <span className="manifest-arrow">↗</span>
-      </a>
-      <a href="https://github.com/laganipatel" target="_blank" rel="noopener noreferrer" className="manifest-nav-item">
-        <span className="nav-item-content">
-          <FaGithub className="nav-icon" />
-          GitHub
-        </span>
-        <span className="manifest-arrow">↗</span>
-      </a>
-      <a href="https://linkedin.com/in/laganipatel" target="_blank" rel="noopener noreferrer" className="manifest-nav-item">
-        <span className="nav-item-content">
-          <FaLinkedin className="nav-icon" />
-          LinkedIn
-        </span>
-        <span className="manifest-arrow">↗</span>
-      </a>
-      <a href="mailto:laganipatel@gmail.com" className="manifest-nav-item" style={{ borderBottom: "none" }}>
-        <span className="nav-item-content">
-          <HiEnvelope className="nav-icon" />
-          Email
-        </span>
-        <span className="manifest-arrow">↗</span>
-      </a>
+      
+      <div className="manifest-links-horizontal">
+        <a href="https://drive.google.com/file/d/1UvlLGgf7YlqPIgXCSGEQmrS1b-A6R1Z5/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="manifest-icon-link" title="Resume">
+          <HiDocumentText />
+        </a>
+        <a href="https://github.com/laganipatel" target="_blank" rel="noopener noreferrer" className="manifest-icon-link" title="GitHub">
+          <FaGithub />
+        </a>
+        <a href="https://linkedin.com/in/laganipatel" target="_blank" rel="noopener noreferrer" className="manifest-icon-link" title="LinkedIn">
+          <FaLinkedin />
+        </a>
+        <a href="mailto:laganipatel@gmail.com" className="manifest-icon-link" title="Email">
+          <HiEnvelope />
+        </a>
+      </div>
     </div>
   </aside>
 );
